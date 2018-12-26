@@ -1,0 +1,5 @@
+Lenh git
+* Day len tren origin
+- tao 1 file moi trong repon: git add abc.txt
+- Commit file: git commit -m "chu thich"
+- push len respon: git push origin
