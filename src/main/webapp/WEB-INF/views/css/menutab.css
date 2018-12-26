@@ -1,0 +1,62 @@
+.mainbody{
+	float:left;	
+}
+#menu_tab{
+	width:790px;
+	height: 42px;
+	margin-top:2px;
+	float:right;
+
+}
+
+
+ul.menu{
+	float:left;
+background:url(../images/header-menu-bg.png) no-repeat center;
+	width:715px;
+	display:block;
+	border: #09F solid 1px;
+
+}
+ul.menu li{
+	display: inline;	
+	font-size:12px;
+	font-weight:bold;
+	line-height:40px;
+}
+ul.menu li.menu_divider{
+	float: left;
+	height:38px;
+	width: 1px;
+	background: #0FF;
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+ul.menu li a, ul.menu li a:visited {
+	display:block;
+	float:left;
+	margin: 0 15px;
+	padding: 3px 0 0 29px;
+	height:39px;
+	text-decoration:none;
+	
+}
+#nav_home{
+	background:url(../images/home_icon.png) no-repeat left;
+}
+#nav_user{
+	background:url(../images/user_info_icon.png) no-repeat left;
+
+}#nav_store{
+	background:url(../images/store_icon.png) no-repeat left;
+
+}
+#nav_bill{
+	background:
+url(../images/bill_icon.png) no-repeat left;
+
+}
+#nav_schedule{
+	background:url(../images/schedule_icon.png) no-repeat left;
+
+}

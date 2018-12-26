@@ -1,0 +1,36 @@
+.schedulecontent{
+	width:980px;
+	float:left;
+	display:block;
+	margin:34px 0px 10px 10px;	
+}
+.schedulecontent-left{
+	float:left;
+	width:680px;
+	padding:10px;
+}
+
+.schedulecontent-right{
+	float:left;
+	width:259px;
+	padding:10px;
+}
+.schedulecontent-left-table{
+	padding:10px 10px 10px 0;
+}
+.schedulecontent-left-table thead{
+	border-bottom: 3px solid #CCC;	
+}
+
+.schedulecontent-left-table thead tr th{
+	padding:10px;
+	font-size:14px;	
+}
+.schedulecontent-left-table tbody tr {
+	border-bottom: 1px solid #CCC;
+	margin-top:10px;	
+}
+.schedulecontent-left-table tbody tr td{
+	padding:10px;
+	font-size:12px;
+}

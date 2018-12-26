@@ -1,0 +1,100 @@
+.storecontent{
+	width:900px;
+	float:left;	
+	margin:34px 0px 10px 10px;
+}
+.rightcontent-title{
+	width:860px;
+	border:#999 solid 1px;
+	display:block;
+	float:left;
+	margin-left:10px;
+}
+.rightcontent-title img{
+	float:left;	
+	margin-left:20px;
+}
+.rightcontent-title h2{
+	float:left;
+	margin-left:20px;
+	padding: 4px 0 0 0;
+}
+.products-box{
+	width:900px;
+	float:left;
+	display:block;
+}
+#medical-box{
+	width:200px;
+	float:left;
+	margin:10px;
+	display:block;
+}
+.medical-box-top{
+	border:#999 solid 1px;
+	display:block;
+	width:200px;
+	margin-bottom:5px;
+	float:left;
+}
+.medical-box-top a {
+	float:left;
+	margin:10px 5px 0 50px;
+}
+
+.medical-box-top img{
+	float:left;
+	margin:5px 0 0 25px;
+}
+.medical-box-top h4{
+	float:left;
+	width:120px;
+	padding: 10px 10px 0 70px;
+	margin-bottom:10px;
+	display:block;
+	}
+.medical-box-bottom{
+	border:#999 solid 1px;
+	display:block;
+	width:160px;
+	float: left;
+	border:#CCC solid 1px;
+	margin-left:20px;
+}
+.medical-box-bottom a img{
+	margin-left:20px;
+	margin-top:1px;
+	float:left;
+}
+.medical-box-bottom .thuoc-chitiet{
+	float:right;
+	width:70px;
+	height:20px;
+	margin-top:4px;
+	background:url(../images/adddetails-icon.png) left no-repeat ;
+}
+.medical-box-bottom .thuoc-chitiet p{
+	margin-left:20px;
+	padding-top: 3px;
+}
+.content-page{
+	width:100px;
+	float:right;
+	margin-top:10px;
+}
+.content-page .current-page{
+	width:20px;
+	height:20px;
+	background:#6FF;
+	text-align: center;
+	float:left;
+	display:block;
+}
+.content-page a{
+	width:20px;
+	height:20px;
+	display:block;
+	float:left;
+	margin-left:5px;
+	text-align:center;
+}

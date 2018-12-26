@@ -1,0 +1,41 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="medical.mapper.UserMapper">
+	<!-- insert user  -->
+    <insert id="insertUser" parameterType="User" >
+        <!-- INSERT INTO DANGNHAP (ID, USERNAME, PASSWORD, IDPHANQUYEN) VALUES (#{id}, #{username}, #{password}, #{idphanquyen}); -->
+        INSERT INTO DANGNHAP (USERNAME, PASSWORD) VALUES (#{username}, #{password});
+    </insert>
+	<!-- update user -->
+    <update id="updateUser" parameterType="User">
+        UPDATE DANGNHAP SET  USERNAME = #{username}, PASSWORD = #{password}, IDPHANQUYEN = #{idphanquyen} WHERE ID = #{id};
+    </update>
+    <!-- delete user by id -->
+    <delete id="deleteUserId" parameterType="int">
+        DELETE from DANGNHAP WHERE ID = #{id};
+    </delete>
+    <!-- select all user -->
+    <select id="selectAllUser" resultMap="result">
+        SELECT * FROM DANGNHAP;
+    </select>
+    <!-- select by username -->
+    <select id="selectUserByname" parameterType="User" resultType="int">
+        SELECT count(*) FROM DANGNHAP WHERE USERNAME = #{username};
+    </select>
+    <!-- kiểm tra có user nào có username và password không -->
+     <select id="selectUser" parameterType="User" resultType="int">
+        SELECT count(*) FROM DANGNHAP WHERE  USERNAME= #{username} and PASSWORD= #{password};
+    </select>
+    <!-- select user by username -->
+    <select id="selectinfo" parameterType="String" resultType="User">
+        SELECT * FROM DANGNHAP WHERE USERNAME = #{username};
+    </select>
+    
+    <resultMap id = "result" type = "User">
+       <result property = "id" column = "ID"/>
+       <result property = "username" column = "USERNAME"/>
+       <result property = "password" column = "PASSWORD"/>
+       <result property = "idphanquyen" column = "IDPHANQUYEN"/>
+    </resultMap>
+</mapper>

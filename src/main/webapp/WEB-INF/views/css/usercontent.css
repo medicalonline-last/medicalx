@@ -1,0 +1,121 @@
+/* CSS Document */
+
+.usercontent{
+	width:860px;
+	float:left;
+	display:block;
+	margin:34px 0px 10px 10px;	
+}
+.usercontent-tab-1{
+	float:left;
+}
+.usercontent-tab-1-info-left{
+	width:220px;
+	float:left;
+	border:#999 solid 1px;
+	display:block;
+	margin-left:10px;
+	margin-top:10px;
+}
+#usercontent-tab-1-info-left-img{
+	float:left;
+	margin:10px;	
+}
+.usercontent-tab-1-info-left-usertype{
+	margin-top: 10px;
+}
+.usercontent-tab-1-info-left-usertype p{
+	margin-top:10px;	
+}
+.usercontent-tab-1-info-right{
+	float:left;
+	display:block;	
+	margin-left:10px;
+	padding:0 10px 10px 10px;
+	width:580px;
+}
+.usercontent-tab-1-info-right-fieldset1{
+	padding:10px;	
+}
+.usercontent-tab-1-info-right-fieldset2{
+	margin-top:20px;
+	padding:10px;	
+}
+.usercontent-tab-2{
+	float:left;
+}
+.usercontent-tab-2-info-left{
+	width:200px;
+	float:left;
+}
+.usercontent-tab-2-info-left a{
+	width:180px;
+	height:25px;
+	margin:-10px 10px 10px 10px;	
+	float:left;
+	background:#F90;
+	text-decoration:none;
+}
+.usercontent-tab-2-info-left a div h3{
+	margin-top:5px;
+	color:#FFF;
+}
+.usercontent-tab-2-info-right{
+	float:left;
+	display:block;	
+	margin-top:10px;
+	padding:10px 10px 10px 20px;
+	width:600px;
+}
+.usercontent-tab-info-form{
+	width: 100%;
+	float:left;
+	display:block;
+}
+.usercontent-tab-info-form td{
+	padding: 5px 0 5px 5px;	
+} 
+table{
+	border-collapse:collapse;
+	border-spacing:0;
+}
+tbody{
+	display:table-row-group;
+	vertical-align:middle;
+}
+.usercontent-tab-span-title{
+	margin-right:15px;
+	font-weight:bold;	
+}
+.usercontent-tab-itext{
+	padding:4px 3px;
+	border-bottom:1px solid #CCC;
+}
+.usercontent-tab-select{
+	padding:4px 3px;
+	float:left;
+	margin-right:10px;
+}
+.usercontent-tab-ibutton{
+	display:inline-block;
+	cursor:pointer;
+	white-space:nowrap;
+	overflow:visible;
+	text-decoration:none;
+	border:1px solid;
+	background-color:#39F;
+	color:#FFF;
+	font-size:14px;
+	padding:5px;
+	text-align:center;
+	outline:none;
+	font-weight:bold;
+}
+.usercontent-tab-3{
+	float:left;
+	width:600px;
+}
+.usercontent-tab-4{
+	float:left;
+	width:600px;
+}
