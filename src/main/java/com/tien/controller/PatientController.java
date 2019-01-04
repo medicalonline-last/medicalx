@@ -29,11 +29,11 @@ public String updatePatient(Patient patient,@RequestParam String username,
 		PatientService patientService=(PatientService) context.getBean("patientService");
 		UserService service=(UserService) context.getBean("userService");
 		
-		User user=service.selectinfo(UserController.getUsername1());
+	
 		patient.setTen(username);
 		patient.setSodienthoai(phonenumber);
 		patient.setEmail(email);
-		patient.setIddangnhap(user.getId());
+	
 		patient.setQuequan(quequan);
 		patient.setGioitinh(gioitinh);
 		patient.setNgaysinh(ngaysinh);
@@ -42,6 +42,6 @@ public String updatePatient(Patient patient,@RequestParam String username,
 		map.addAttribute("smg","Cập nhật thành công");
 	
 	
-	return "userpage";
-}
+		return "userpage";
+	}
 }

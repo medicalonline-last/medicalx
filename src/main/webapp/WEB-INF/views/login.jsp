@@ -20,9 +20,7 @@
 					required="Bạn cần điền đầy đủ thông tin!">
 					<p>Password</p> <input type="password" name="password"
 					placeholder="Enter Password"
-					required="Bạn cần điền đầy đủ thông tin!"> <!--<span><input type="radio" name="gender" value="male" checked> Male </span>
-  <span><input type="radio" name="gender" value="female"> Female </span>
-  <span><input type="radio" name="gender" value="other"> Other </span>  -->
+					required="Bạn cần điền đầy đủ thông tin!"> 
 
 						<input type="submit" name="submit" value="Login"> <a
 							href="#">Forget Password?</a>
@@ -32,10 +30,13 @@
 			</form>
 			<form class="register-form" action="register.do" method="post">
 				<input type="text" name="username"
-					placeholder="Enter Username" required> <input
+					placeholder="Enter Username" required> 
+					<input
 					type="password" name="password" placeholder="Enter Password"
-					required> <input type="password" name="repeatpassword"
-						placeholder="Repeat Password" required> <input type="text"
+					required> 
+					<input type="password" name="repeatpassword"
+						placeholder="Repeat Password" required> 
+					<input type="text"
 							name="youremail" placeholder="Enter your mail" required>
 								<input type="submit" name="create" value="Create">
 									<p class="message">
