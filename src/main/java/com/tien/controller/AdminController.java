@@ -1,9 +1,6 @@
 package com.tien.controller;
 
 import java.io.IOException;
-import java.util.List;
-
-import org.omg.CORBA.PUBLIC_MEMBER;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.stereotype.Controller;

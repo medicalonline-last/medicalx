@@ -18,10 +18,12 @@ import medical.service.UserService;
 
 @Controller
 public class UserController {
+	public static  User user2;
+	
 	@RequestMapping(value="/register.do", method=RequestMethod.POST)
 	public String addUser(User user, @RequestParam String username, @RequestParam String password,@RequestParam String repeatpassword,ModelMap map) throws IOException {
 			user.setUsername(username);
-			user.setPassword(password);
+			user.setPassword(password);			
 			User user1=new User(username);
 			AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 		        UserService userService = (UserService) context.getBean("userService");
@@ -43,16 +45,15 @@ public class UserController {
 		 		  		
 	}
 	@RequestMapping(value="/login.do", method=RequestMethod.POST)
-	public String loginUser(User user, @RequestParam String username, @RequestParam String password,ModelMap map) throws IOException {
+	public String loginUser(User user,@RequestParam String username, @RequestParam String password,ModelMap map) throws IOException {
 			user.setUsername(username);
-			user.setPassword(password);		
-			
+			user.setPassword(password);					
 			  AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 		      UserService userService = (UserService) context.getBean("userService");
 		      User user1= userService.selectinfo(username);		      
 		       int check= userService.selectUser(user);
 		       if (check==1&&user1.getIdphanquyen()==2) {
-		    	   map.put("msg", username);
+		    	   map.put("msg", username);		    	   
 				return"admin/Admin-home";				
 			}
 		       else if(check==1) {
@@ -66,4 +67,7 @@ public class UserController {
 		 		  
 	
 	}
+	public static String getUsername1() {
+		return user2.getUsername();
+	} 
 }

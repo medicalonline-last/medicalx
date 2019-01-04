@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import medical.config.AppConfig;
 import medical.entity.Patient;
+import medical.entity.User;
 import medical.service.PatientService;
+import medical.service.UserService;
 
 @Controller
 public class PatientController {
@@ -25,9 +27,13 @@ public String updatePatient(Patient patient,@RequestParam String username,
 			ModelMap map) {
 		AbstractApplicationContext context= new AnnotationConfigApplicationContext(AppConfig.class);
 		PatientService patientService=(PatientService) context.getBean("patientService");
+		UserService service=(UserService) context.getBean("userService");
+		
+		User user=service.selectinfo(UserController.getUsername1());
 		patient.setTen(username);
 		patient.setSodienthoai(phonenumber);
 		patient.setEmail(email);
+		patient.setIddangnhap(user.getId());
 		patient.setQuequan(quequan);
 		patient.setGioitinh(gioitinh);
 		patient.setNgaysinh(ngaysinh);
