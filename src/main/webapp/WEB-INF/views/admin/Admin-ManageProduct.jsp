@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="s"%>	
 <!DOCTYPE html><html><!-- InstanceBegin template="/Templates/template for admin.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
     <!-- Required meta tags-->
@@ -282,32 +284,33 @@
                                             <tr>
                                                 <th>Loại Hình</th>
                                                 <th>Tên</th>
-                                                <th>Chi tiết</th>
+                                                <th>Thông Tin</th>
                                                 <th>Giá tiền</th>
                                                 <th>Ảnh</th>
                                             </tr>
                                         </thead>
+                                        <c:forEach items="${productList}" var="p">
                                         <tbody>
-                                            <tr class="tr-shadow">
-                                                <td>Thuốc</td>
-                                                <td>Berberin</td>
-                                                <td class="desc">Chuyên trị đau bụng</td>
-                                                <td>VNĐ20.000</td>
-                                                <td>Ảnh từ db</td>
-                                                <td>
-                                                    <div class="table-data-feature">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr class="spacer"></tr>
-                                            </tr>
+	                                            <tr class="tr-shadow">
+	                                                <td><c:out value = "${p.id}"/></td> 
+	                                                <td><c:out value = "${p.ten}"/></td>
+	                                                <td><c:out value = "${p.thongtin}" /></td>
+	                                                <td class="desc"><c:out value = "${p.giatien}"/> VNĐ</td>
+	                                                <td><c:out value = "${p.anh}"/></td>
+	                                                <td>
+	                                                    <div class="table-data-feature">
+	                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+	                                                            <a href="#"><i class="zmdi zmdi-edit" ></i></a>
+	                                                        </button>
+	                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+	                                                            <a href="#" onclick="if (!(confirm('Bạn có muốn xóa sản phẩm này?'))) return false"><i class="zmdi zmdi-delete"></i></a>
+	                                                        </button>
+	                                                    </div>
+	                                                </td>
+	                                            </tr>
+	                                            <tr class="spacer"></tr>
                                         </tbody>
+                                        </c:forEach>
                                     </table>
                                 </div>
                                 <!-- END DATA TABLE -->
@@ -324,7 +327,7 @@
                                                 <h2 class="modal-title">Thêm sản phẩm mới</h2>
                                             </div>
                                             <div class="modal-body">
-                                                <form role="form" method="POST" action="">
+                                                <form role="form" method="POST" action="addProduct">
                                                     <input type="hidden" name="_token" value="">
                                                     <div class="rs-select2--light rs-select2--md">
                                                         <select class="js-select2" name="property">
@@ -337,25 +340,25 @@
                                                     <div class="form-group">
                                                         <label class="control-label">Tên</label>
                                                         <div>
-                                                            <input type="text" class="form-control input-lg" name="name" value="">
+                                                            <input type="text" class="form-control input-lg" name="ten" required="Bạn cần điền đầy đủ thông tin!">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label class="control-label">Chi tiết</label>
+                                                        <label class="control-label">Thông Tin</label>
                                                         <div>
-                                                             <input type="text" class="form-control input-lg" name="detail" value="">
+                                                             <input type="text" class="form-control input-lg" name="thongtin" required="Bạn cần điền đầy đủ thông tin!">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="control-label">Giá tiền</label>
                                                         <div>
-                                                             <input type="text" class="form-control input-lg" name="cost" value="">
+                                                             <input type="text" class="form-control input-lg" name="giatien" required="Bạn cần điền đầy đủ thông tin!">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="control-label">Ảnh</label>
                                                         <div class="input-group image-preview">
-                                                            <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                                            <input type="text" class="form-control image-preview-filename" disabled="disabled" name="anh"> <!-- don't give a name === doesn't send on POST/GET -->
                                                             <span class="input-group-btn">
                                                                 <!-- image-preview-clear button -->
                                                                 <button type="button" class="btn btn-default image-preview-clear" style="display:none;">

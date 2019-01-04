@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="medical.mapper.DrugMapper">
+
+	<select id="getAllThuoc" resultType="drug" resultMap="result">
+        SELECT * FROM THUOC;
+    </select>
+
+	<insert id="insertThuoc" parameterType="drug"  keyProperty="id" useGeneratedKeys="true">
+		  insert into THUOC (ten,thongtin,giatien,anh)
+		  values(#{ten},#{thongtin},#{giatien},#{anh});
+	</insert>
+	
+	<update id="updateThuoc" parameterType="drug">
+        UPDATE THUOC SET  ten = #{ten}, thongtin = #{thongtin}, giatien = #{giatien}, anh= #{anh} WHERE ID = #{id};
+    </update>
+    
+    <delete id="deleteThuoc" parameterType="int">
+        DELETE from THUOC WHERE ID = #{thuocId};
+    </delete>
+    
+     <select id="findById" parameterType="int" resultType="drug" resultMap="result">
+        SELECT * FROM THUOC WHERE id = #{thuocId};
+    </select>
+    
+    <resultMap id = "result" type = "drug">
+       <result property = "id" column = "ID"/>
+       <result property = "ten" column = "TEN"/>
+       <result property = "thongtin" column = "THONGTIN"/>
+       <result property = "giatien" column = "GIATIEN"/>
+       <result property = "anh" column = "ANH"/>
+    </resultMap>
+</mapper>

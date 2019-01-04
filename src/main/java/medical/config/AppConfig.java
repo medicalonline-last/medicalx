@@ -47,7 +47,7 @@ public class AppConfig {
         return sqlSessionFactory;
     }
 
-    // scan tất cả những mapper package vn.viettuts.mapper
+    // scan tất cả những mapper package medical.mapper
     @Bean
     public MapperScannerConfigurer mapperScannerConfigurer() {
         MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
@@ -56,7 +56,7 @@ public class AppConfig {
         return mapperScannerConfigurer;
     }
 
-    // Có thể tạo @Bean cho mỗi interface mapper thay vì scan toàn bộ package vn.viettuts.mapper
+    // Có thể tạo @Bean cho mỗi interface mapper thay vì scan toàn bộ package medical.mapper
     /*
     @Bean (name = "studentMapper")
     public StudentMapper studentMapper() throws Exception {
