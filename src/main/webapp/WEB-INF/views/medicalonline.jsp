@@ -492,7 +492,7 @@ label.upload-file input[type="file"] {
 												<div class="container-fluid">
 													<div class="row">
 														<div class="col-md-12 col-sm-12 col-xs-12">
-															<form class="form-horizontal" method="post">
+															<form class="form-horizontal" action="medicalonline" method="post">
 
 																<div class="form-group ">
 																	<label class="control-label col-sm-12 requiredField"
@@ -501,7 +501,7 @@ label.upload-file input[type="file"] {
 																	</label>
 																	<div class="col-sm-10">
 																		<s:select  path="listPB" class="select form-control" id="select_dev"
-																			name="select_dev">
+																			name="phongban">
 																			<s:option value="NONE" label="Chọn khoa" />
 																			<s:options items="${listPB}"/>
 																		</s:select>
@@ -516,7 +516,7 @@ label.upload-file input[type="file"] {
 																	<div class="col-sm-10">
 																		<s:select path="listBS"
 																			class="select form-control" id="select_doctor"
-																			name="select_doctor">
+																			name="doctor">
 																			<s:option value="NONE" label="Chọn tên bác sĩ" />
 																			<s:options items="${listBS}"/>
 																		</s:select>
@@ -543,7 +543,7 @@ label.upload-file input[type="file"] {
 																	value="">
 																<div class="form-group">
 																	<div class="col-sm-10 col-sm-offset-2">
-																		<button class="btn btn-primary " name="submit"
+																		<button class="btn btn-primary "
 																			type="submit">Đặt Lịch Khám</button>
 																	</div>
 																</div>

@@ -3,6 +3,8 @@ package com.tien.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -17,15 +19,20 @@ import medical.service.UserService;
 @Controller
 public class DatLichController {
 	AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-	@RequestMapping(value={"/medicalonline"}, method = RequestMethod.GET)
-	  public String view(ModelMap model) {
-		DoctorService doctorService=(DoctorService) context.getBean("doctorService");
-		List<String> listPB=doctorService.getChuyenmonDoctor();
-	    /*List<String> listBS = new ArrayList<String>();*/	  
-	    // add phong ban
-	    List<String> listBS = doctorService.getTenDoctor();	      
-	    model.addAttribute("listBS", listBS);	
-	    model.addAttribute("listPB", listPB);	
-	    return "medicalonline";
-	  }
+
+	@RequestMapping(value = { "/medicalonline" }, method = RequestMethod.GET)
+	public String view(ModelMap model) {
+		DoctorService doctorService = (DoctorService) context.getBean("doctorService");
+		List<String> listPB = doctorService.getChuyenmonDoctor();
+		/* List<String> listBS = new ArrayList<String>(); */
+		// add phong ban
+		List<String> listBS = doctorService.getTenDoctor();
+		model.addAttribute("listBS", listBS);
+		model.addAttribute("listPB", listPB);
+		return "medicalonline";
+	}
+	/*@RequestMapping(value = { "/medicalonline" }, method = RequestMethod.POST)
+	public String datlich() {
+		return null;
+	}*/
 }
