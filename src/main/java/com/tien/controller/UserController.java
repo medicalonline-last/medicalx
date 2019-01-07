@@ -28,7 +28,7 @@ public class UserController {
 		user.setUsername(username);
 		user.setPassword(password);
 		Integer phanquyen;
-		if (loainguoidung.equals("Bá»‡nh NhÃ¢n")) {
+		if (loainguoidung.equals("Bệnh Nhân")) {
 			phanquyen = 3;
 		} else {
 			phanquyen = 1;
@@ -40,15 +40,15 @@ public class UserController {
 		
 		if (password.equals(repeatpassword)==true&&checkuser==0) {				
 	        userService.insertUser(user);
-	        map.put("msg", "ÄÄƒng kÃ­ thÃ nh cÃ´ng");
+	        map.put("msg", "Đăng kí thành công");
 	        return "admin/Admin-ManageUser";
 		}
 		else if  (checkuser==1) {
-			map.put("msg", "TÃ i khoáº£n Ä‘Ã£ tá»“n láº¡i");
+			map.put("msg", "Tài khoản đã tồn lại");
 			return "admin/Admin-ManageUser";
 		}
 			else {
-				map.put("msg", "Máº­t kháº©u nháº­p láº¡i khÃ´ng Ä‘Ãºng");
+				map.put("msg", "Mật khẩu nhập lại không đúng");
 				return "admin/Admin-ManageUser";
 			}
 	 		  
@@ -73,15 +73,15 @@ public class UserController {
 			
 			if (password.equals(repeatpassword)==true&&checkuser==0) {				
 		        userService.insertUser(user);
-		        map.put("msg", "ÄÄƒng kÃ­ thÃ nh cÃ´ng");
+		        map.put("msg", "Đăng kí thành công");
 		        return "login";
 			}
 			else if  (checkuser==1) {
-				map.put("msg", "TÃ i khoáº£n Ä‘Ã£ tá»“n láº¡i");
+				map.put("msg", "Tài khoản đã tồn lại");
 				return"login";
 			}
 				else {
-					map.put("msg", "Máº­t kháº©u nháº­p láº¡i khÃ´ng Ä‘Ãºng");
+					map.put("msg", "Mật khẩu nhập lại không đúng");
 					return "login";
 				}
 		 		  		
@@ -105,7 +105,7 @@ public class UserController {
 		    	   return"index";
 		       }
 		       else {
-		    	   map.put("msg", "Nháº­p sai máº­t kháº©u hoáº·c password");
+		    	   map.put("msg", "Nhập sai mật khẩu hoặc password");
 				return "login";
 			}
 		 		  
