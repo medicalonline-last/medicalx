@@ -5,3 +5,4 @@ Lenh git
 - push len respon: git push origin
 * Tai ve tu respon:
 - Tai ve ban sua doi tu respon: git pull origin;
+- Test 1
