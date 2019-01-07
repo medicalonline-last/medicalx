@@ -293,7 +293,7 @@
                                         <c:forEach items="${productList}" var="p">
                                         <tbody>
 	                                            <tr class="tr-shadow">
-	                                                <td><c:out value = "${p.loaihinh}"/></td> 
+	                                                <td><c:out	value="${p.loaihinh}" /></td> 
 	                                                <td><c:out value = "${p.ten}"/></td>
 	                                                <td><c:out value = "${p.thongtin}" /></td>
 	                                                <td class="desc"><c:out value = "${p.giatien}"/> VNĐ</td>

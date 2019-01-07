@@ -20,7 +20,7 @@ import medical.service.DrugService;
 @Controller
 public class ProductController {	
 	AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-	 @RequestMapping(value = "/addProduct.do", method=RequestMethod.GET)
+	 @RequestMapping(value = {"/addProduct"}, method=RequestMethod.GET)
 	public String showListOfProduct(ModelMap model) {
 		 DrugService drugService = (DrugService) context.getBean("drugService");
 		List<Drug> list = drugService.getAllThuoc();
@@ -35,7 +35,7 @@ public class ProductController {
         Drug drug=new Drug(ten, thongtin, giatienx,loaihinh);    	
     	drugService.insertThuoc(drug);
     	map.put("msg", "Thêm thành công!!");
-		return "/admin/Admin-ManageProduct";
+		return "redirect:addProduct";
 	}
     
  /*   @RequestMapping("/updateProduct")
