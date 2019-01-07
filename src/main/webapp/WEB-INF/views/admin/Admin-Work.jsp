@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="s"%>
 <!DOCTYPE html><html><!-- InstanceBegin template="/Templates/template for admin.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
     <!-- Required meta tags-->
@@ -265,17 +267,18 @@
                                                 <th>Địa Điểm</th>
                                             </tr>
                                         </thead>
+                                        <c:forEach items = "${listLich}" var = "l">
                                         <tbody>
                                             <tr class="tr-shadow">
-                                                <td>Trần Văn Anh</td>
-                                                <td>Hoàng Văn Thắng</td>
-                                                <td>12/28/2018</td>
-                                                <td>8h30 - 9h30</td>
-                                                <td>Phòng 302, Nhà B1</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td><c:out value = "${l.thoigian}"/></td>
+                                                <td><c:out value = "${l.gio}"/></td>
+                                                <td><c:out value = "${l.diadiem}"/></td>
                                                 <td>
                                                     <div class="table-data-feature">
                                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                            <i class="zmdi zmdi-delete"></i>
+                                                            <a href="#" onclick="if (!(confirm('Bạn có muốn xóa sản phẩm này?'))) return false"><i class="zmdi zmdi-delete"></i></a>
                                                         </button>
                                                     </div>
                                                 </td>
@@ -283,6 +286,7 @@
                                             <tr class="spacer"></tr>
                                             </tr>
                                         </tbody>
+                                        </c:forEach>
                                     </table>
                                 </div>
                                 <!-- END DATA TABLE -->

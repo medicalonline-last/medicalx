@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+		<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="s"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <!-- InstanceBegin template="/Templates/index's template.dwt" codeOutsideHTMLIsLocked="false" -->
@@ -181,19 +183,23 @@
 										<th>STT</th>
 										<th>Bệnh nhân/Bác sỹ</th>
 										<th>Thời gian</th>
+										<th>Khung giờ</th>
 										<th>Địa điểm</th>
 										<th>Ghi chú</th>
 									</tr>
 								</thead>
+								<c:forEach items = "${listLich}" var = "l">
 								<tbody>
 									<tr>
-										<td>1</td>
-										<td>Load từ DB</td>
-										<td>Load từ DB</td>
-										<td>Load từ DB</td>
-										<td>Load từ DB</td>
+										<td><c:out value = "${l.id}"/></td>
+										<td></td>
+										<td><c:out value = "${l.ngay}"/></td>
+										<td><c:out value = "${l.gio}"/></td>
+										<td><c:out value = "${l.diadiem}"/></td>
+										<td>Không</td>
 									</tr>
 								</tbody>
+								</c:forEach>
 							</table>
 						</div>
 					</div>
