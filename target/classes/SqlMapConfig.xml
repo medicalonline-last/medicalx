@@ -7,12 +7,17 @@
         <typeAlias alias="User" type="medical.entity.User" />
         <typeAlias alias="Drug" type="medical.entity.Drug" />
         <typeAlias alias="Doctor" type="medical.entity.Doctor" />
+<<<<<<< HEAD
+=======
+        <typeAlias alias="DatLich" type="medical.entity.DatLich" />
+>>>>>>> 0962375277135210597e070b39dc35063b46da38
     </typeAliases>
 
     <mappers>
         <mapper resource="medical/mapper/sql/UserMapper.xml" />
         <mapper resource="medical/mapper/sql/DrugMapper.xml" />
-         <mapper resource="medical/mapper/sql/DoctorMapper.xml" />
+        <mapper resource="medical/mapper/sql/DoctorMapper.xml" />
+        <mapper resource="medical/mapper/sql/DatLichMapper.xml" />
     </mappers>
 
 </configuration>
