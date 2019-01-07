@@ -18,25 +18,20 @@
 				<p>Username</p>
 				<input type="text" name="username" placeholder="Enter Username"
 					required="Bạn cần điền đầy đủ thông tin!">
-					<p>Password</p> <input type="password" name="password"
+				<p>Password</p> 
+				<input type="password" name="password"
 					placeholder="Enter Password"
 					required="Bạn cần điền đầy đủ thông tin!"> 
-
-						<input type="submit" name="submit" value="Login"> <a
-							href="#">Forget Password?</a>
-							<p class="message">
-								<a href="#">Create an account?</a>
-							</p>
+				<input type="submit" name="submit" value="Login"> 
+				<a href="#">Forget Password?</a>
+				<p class="message"><a href="#">Create an account?</a></p>
 			</form>
 			<form class="register-form" action="register.do" method="post">
-				<input type="text" name="username"
-					placeholder="Enter Username" required> 
-					<input
-					type="password" name="password" placeholder="Enter Password"
-					required> 
-					<input type="password" name="repeatpassword"
-						placeholder="Repeat Password" required> 
-					<input type="text"
+				<input type="text" name="username" placeholder="Enter Username"
+					required> <input type="password" name="password"
+					placeholder="Enter Password" required> <input
+						type="password" name="repeatpassword"
+						placeholder="Repeat Password" required> <input type="text"
 							name="youremail" placeholder="Enter your mail" required>
 								<input type="submit" name="create" value="Create">
 									<p class="message">
@@ -45,8 +40,12 @@
 			</form>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> <script>
-		$('.message a').click(function(){
-		$('form').animate({height: "toggle", opacity: "toggle"}, "slow");});
+		$('.message a').click(function() {
+			$('form').animate({
+				height : "toggle",
+				opacity : "toggle"
+			}, "slow");
+		});
 	</script> </header>
 </body>
 </html>

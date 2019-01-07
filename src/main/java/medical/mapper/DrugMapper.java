@@ -11,5 +11,6 @@ public interface DrugMapper {
 	    public int deleteThuoc(int thuocId);	    
 	    public int findById(Drug drug);*/
 	 	public List<Drug> getAllThuoc();
+	 	
 	    
 }
