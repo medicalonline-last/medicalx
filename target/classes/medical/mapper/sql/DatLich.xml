@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="medical.mapper.DatLichMapper">
+	 <resultMap id = "result" type = "DatLich">
+       <result property = "id" column = "ID"/>
+       <result property = "ngay" column = "NGAY"/>
+       <result property = "gio" column = "GIO"/>
+       <result property = "diadiem" column = "DIADIEM"/>
+       <result property = "idbacsi" column = "IDBACSI"/>
+       <result property = "idbenhnhan" column = "IDBENHNHAN"/>
+    </resultMap>
+	<insert id="insertDatLich" parameterType="DatLich" >
+		  insert into lichlamviec(ngay,gio,diadiem,idbacsi,idbenhnhan)
+  values(#{ngay},#{gio},#{diadiem},#{idbacsi}, #{idbenhnhan});
+	</insert>
+	<select id="getAllLich" resultType="DatLich" resultMap="result">
+        SELECT * FROM lichlamviec;
+    </select>
+    
+</mapper>
