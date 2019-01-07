@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="s"%>	
 <!DOCTYPE html><html><!-- InstanceBegin template="/Templates/template for admin.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
     <!-- Required meta tags-->
@@ -296,33 +298,32 @@
                                                 <th>Địa Chỉ</th>
                                             </tr>
                                         </thead>
+                                        <c:forEach items="${userList}" var="u">
                                         <tbody>
                                             <tr class="tr-shadow">
                                                 <td>Lori Lynch</td>
                                                 <td>Bác sĩ</td>
-                                                <td>tuanand123</td>
-                                                <td>matkhau123</td>
+                                                <td><c:out value = "${c.username}"/></td>
+                                                <td><c:out value = "${c.password}"/></td>
                                                 <td>0978855695</td>
                                                 <td>
                                                     <span class="block-email">lori@example.com</span>
                                                 </td>
                                                 <td>Đông Anh - Hà Nội</td>
                                                 <td>
-                                                    <div class="table-data-feature">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                            <i class="zmdi zmdi-mail-send"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button>
-                                                    </div>
+                                                   <div class="table-data-feature">
+	                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+	                                                            <a href="#"><i class="zmdi zmdi-edit" ></i></a>
+	                                                        </button>
+	                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+	                                                            <a href="#" onclick="if (!(confirm('Bạn có muốn xóa sản phẩm này?'))) return false"><i class="zmdi zmdi-delete"></i></a>
+	                                                        </button>
+	                                                    </div>
                                                 </td>
                                             </tr>
                                             <tr class="spacer"></tr>
                                         </tbody>
+                                        </c:forEach>
                                     </table>
                                 </div>
                                 <!-- END DATA TABLE -->
@@ -338,20 +339,20 @@
                                                 <h2 class="modal-title">Tạo người dùng mới</h2>
                                             </div>
                                             <div class="modal-body">
-                                                <form role="form" method="POST" action="">
+                                                <form role="form" method="POST" action="addUser.do">
                                                     <input type="hidden" name="_token" value="">
                                                     <div class="rs-select2--light rs-select2--md">
                                                         <select class="js-select2" name="property">
                                                             <option selected="selected">Loại người dùng</option>
-                                                            <option value="">Bệnh Nhân</option>
-                                                            <option value="">Bác sĩ</option>
+                                                            <option value="Bệnh Nhân">Bệnh Nhân</option>
+                                                            <option value="Bác Sĩ">Bác Sĩ</option>
                                                         </select>
                                                         <div class="dropDownSelect2"></div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="control-label">Username</label>
                                                         <div>
-                                                            <input type="text" class="form-control input-lg" name="name" value="">
+                                                            <input type="text" class="form-control input-lg" name="username" required="Bạn cần điền đầy đủ thông tin!">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
@@ -363,7 +364,7 @@
                                                     <div class="form-group">
                                                         <label class="control-label">Nhập lại Password</label>
                                                         <div>
-                                                            <input type="password" class="form-control input-lg" name="password_confirmation">
+                                                            <input type="password" class="form-control input-lg" name="repeatpassword" required="Bạn cần điền đầy đủ thông tin!">
                                                         </div>
                                                     </div>
 
