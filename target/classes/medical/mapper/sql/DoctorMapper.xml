@@ -21,11 +21,11 @@
 	<select id="getAllDoctor" resultType="Doctor" resultMap="result">
         SELECT * FROM bacsi;
     </select>
-    <select id="getTenDoctor" resultType="Doctor" resultMap="result">
+    <select id="getTenDoctor" resultType="String">
         SELECT ten FROM bacsi;
     </select>
-    <select id="getChuyenmonDoctor" resultType="Doctor" resultMap="result">
-        SELECT chuyenmon FROM bacsi;
+    <select id="getChuyenmonDoctor" resultType="String">
+        SELECT distinct chuyenmon FROM bacsi;
     </select>
     
     <select id="getPhonglamviecDoctor" resultType="Doctor" resultMap="result">

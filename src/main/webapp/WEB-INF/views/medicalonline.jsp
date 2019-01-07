@@ -502,7 +502,7 @@ label.upload-file input[type="file"] {
 																	<div class="col-sm-10">
 																		<s:select  path="listPB" class="select form-control" id="select_dev"
 																			name="select_dev">
-																			<s:option value="NONE" label="Select" />
+																			<s:option value="NONE" label="Chọn khoa" />
 																			<s:options items="${listPB}"/>
 																		</s:select>
 																	</div>
@@ -517,7 +517,7 @@ label.upload-file input[type="file"] {
 																		<s:select path="listBS"
 																			class="select form-control" id="select_doctor"
 																			name="select_doctor">
-																			<s:option value="NONE" label="Select" />
+																			<s:option value="NONE" label="Chọn tên bác sĩ" />
 																			<s:options items="${listBS}"/>
 																		</s:select>
 																	</div>
@@ -539,7 +539,7 @@ label.upload-file input[type="file"] {
 																		</div>
 																	</div>
 																</div>
-																<input style="display: none" type="text" id="khunggio"
+																<input style="display: " type="text" id="khunggio"
 																	value="">
 																<div class="form-group">
 																	<div class="col-sm-10 col-sm-offset-2">

@@ -5,7 +5,7 @@ import java.util.List;
 import medical.entity.Doctor;
 
 public interface DoctorService {
-	public List<Doctor> getTenDoctor();
-	public List<Doctor> getChuyenmonDoctor();
+	public List<String> getTenDoctor();
+	public List<String> getChuyenmonDoctor();
 	public List<Doctor> findTenbychuyenmonDoctor();
 }

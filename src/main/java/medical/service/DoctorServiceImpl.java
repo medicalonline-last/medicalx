@@ -12,10 +12,10 @@ import medical.mapper.DoctorMapper;
 public class DoctorServiceImpl implements DoctorService{
 	@Autowired
 	DoctorMapper doctorMapper;
-	public List<Doctor> getTenDoctor(){
+	public List<String> getTenDoctor(){
 		return doctorMapper.getTenDoctor();
 	}
-	public List<Doctor> getChuyenmonDoctor(){
+	public List<String> getChuyenmonDoctor(){
 		return doctorMapper.getChuyenmonDoctor();
 	}
 	public List<Doctor> findTenbychuyenmon(){
