@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="medical.mapper.DoctorMapper">
+	 <resultMap id = "result" type = "Doctor">
+       <result property = "id" column = "ID"/>
+       <result property = "ten" column = "TEN"/>
+       <result property = "quequan" column = "QUEQUAN"/>
+       <result property = "ngaysinh" column = "NGAYSINH"/>
+       <result property = "chuyenmon" column = "CHUYENMON"/>
+       <result property = "phonglamviec" column = "PHONGLAMVIEC"/>
+       <result property = "iddangnhap" column = "IDDANGNHAP"/>
+       <result property = "sodienthoai" column = "SODIENTHOAI"/>
+       <result property = "email" column = "EMAIL"/>
+       <result property = "gioitinh" column = "GIOITINH"/>
+       <result property = "anh" column = "ANH"/>
+    </resultMap>
+	<insert id="insertDoctor" parameterType="Doctor" >
+		  insert into bacsi(ten,quequan,ngaysinh,chuyenmon,phonglamviec,iddangnhap,sodienthoai,email,gioitinh,anh)
+  values(#{ten},#{quequan},#{ngaysinh},#{chuyenmon}, #{phonglamviec},#{iddangnhap},#{sodienthoai},#{email},#{gioitinh},#{anh});
+	</insert>
+	<select id="getAllDoctor" resultType="Doctor" resultMap="result">
+        SELECT * FROM bacsi;
+    </select>
+    <select id="getTenDoctor" resultType="Doctor" resultMap="result">
+        SELECT ten FROM bacsi;
+    </select>
+    <select id="getChuyenmonDoctor" resultType="Doctor" resultMap="result">
+        SELECT chuyenmon FROM bacsi;
+    </select>
+    
+    <select id="getPhonglamviecDoctor" resultType="Doctor" resultMap="result">
+        SELECT phonglamviec FROM bacsi where ten = #{ten};
+    </select>
+    <!-- <select id="findByTen" parameterType="String" resultType="Doctor" resultMap="result">
+        SELECT * FROM bacsi WHERE ten = #{ten};
+    </select> -->
+    <select id="findTenbychuyenmonDoctor" resultType="Doctor" resultMap="result">
+        SELECT ten FROM bacsi where chuyenmon = #{chuyenmon};
+    </select>
+</mapper>
