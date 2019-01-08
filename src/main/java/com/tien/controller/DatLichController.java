@@ -31,8 +31,8 @@ public class DatLichController {
 		model.addAttribute("listPB", listPB);
 		return "medicalonline";
 	}
-	/*@RequestMapping(value = { "/medicalonline" }, method = RequestMethod.POST)
-	public String datlich() {
-		return null;
-	}*/
+		/*@RequestMapping(value = { "/medicalonline" }, method = RequestMethod.POST)
+		public String datlich() {
+			return null;
+		}*/
 }

@@ -14,14 +14,16 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.ModelAndView;
 
 import medical.config.AppConfig;
 import medical.entity.User;
 import medical.service.UserService;
 
 @Controller
-public class UserController {
-	public static  User user2;
+@SessionAttributes("slogin")
+public class UserController {	
 	AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 	@RequestMapping(value="/addUser.do", method = RequestMethod.POST)
 	public String addminAddUser(User user, @RequestParam String username, @RequestParam String password, @RequestParam String repeatpassword, @RequestParam String loainguoidung, ModelMap map) throws IOException {
@@ -87,26 +89,28 @@ public class UserController {
 		 		  		
 	}
 	@RequestMapping(value="/login.do", method=RequestMethod.POST)
-	public String loginUser(HttpServletRequest request,User user,@RequestParam String username, @RequestParam String password,ModelMap map) throws IOException {
+	public ModelAndView loginUser(ModelAndView modelandview,User user,@RequestParam String username, @RequestParam String password,ModelMap map) throws IOException {
 			user.setUsername(username);
-			user.setPassword(password);
-			HttpSession session = request.getSession();
-			String userpost =request.getParameter("username");
-			session.setAttribute("usernamepost",userpost );
+			user.setPassword(password);		
 		      UserService userService = (UserService) context.getBean("userService");
 		      User user1= userService.selectinfo(username);		      
 		       int check= userService.selectUser(user);
 		       if (check==1&&user1.getIdphanquyen()==2) {
-		    	   map.put("msg", username);		    	   
-				return"admin/Admin-home";				
+		    	   map.put("msg", username);	
+		    	   modelandview.addObject("slogin",user1.getUsername());
+		    	   modelandview.setViewName("admin/Admin-home");
+		    	   return modelandview;				
 			}
 		       else if(check==1) {
 		    	   map.put("msg", username);
-		    	   return"index";
+		    	   modelandview.addObject("slogin",user1.getUsername());
+		    	   modelandview.setViewName("index");
+		    	   return modelandview;
 		       }
 		       else {
 		    	   map.put("msg", "Nhập sai mật khẩu hoặc password");
-				return "login";
+		    	   modelandview.setViewName("login");
+		    	   return modelandview;
 			}
 		 		  
 	
