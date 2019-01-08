@@ -4,16 +4,16 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="s"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- InstanceBegin template="/Templates/index's template.dwt" codeOutsideHTMLIsLocked="false" -->
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- <html xmlns="http://www.w3.org/1999/xhtml"> -->
 <head>
 <!--  jQuery -->
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <link rel="stylesheet"
 	href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
-<link
+<!-- <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-	rel="stylesheet" id="bootstrap-css"/>
+	rel="stylesheet" id="bootstrap-css"/> -->
 	<script
 		src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 	<script
@@ -516,7 +516,7 @@ label.upload-file input[type="file"] {
 																	</label>
 																	<div class="col-sm-10">
 																		<s:select path="listBS" class="select form-control"
-																			id="select_doctor" name="doctor">
+																			id="select_doctor" name="bacsi">
 																			<s:option value="NONE" label="Chọn tên bác sĩ" />
 																			<s:options items="${listBS}" />
 																		</s:select>
@@ -539,9 +539,23 @@ label.upload-file input[type="file"] {
 																		</div>
 																	</div>
 																</div>
+<<<<<<< HEAD
 																<input style="display:" type="text" id="khunggio"
 																	value="">
 																	<input value="${slogin}" disabled></input>
+=======
+																<div class="form-group ">
+					                                              <label class="control-label col-sm-12 requiredField" for="select_dev">
+					                                               Khung Giờ
+					                                               <span class="asteriskField">
+					                                                *
+					                                               </span>
+					                                              </label>
+					                                              <div class="col-sm-10">
+					                                               	<input class="form-control" id="khunggio" name="khunggio" type="text" placeholder="Bấm chọn khung giờ..." disabled>
+					                                              </div>
+					                                             </div>
+>>>>>>> e1f41e46cba12ace9b003f2f8d03ea1e6bde8142
 																	<div class="form-group">
 																		<div class="col-sm-10 col-sm-offset-2">
 																			<button class="btn btn-primary " type="submit">Đặt
@@ -573,7 +587,7 @@ label.upload-file input[type="file"] {
 													onclick="myFunction(this.value)">10h30 - 11h30</button>
 											</div>
 											<div class="row">
-												<button id="5" class="btn btn-info" value="13h30 - 14h3"
+												<button id="5" class="btn btn-info" value="13h30 - 14h30"
 													onclick="myFunction(this.value)">13h30 - 14h30</button>
 												<button id="6" class="btn btn-info" value="7h30 - 8h30"
 													onclick="myFunction(this.value)">14h30 - 15h30</button>
