@@ -297,7 +297,7 @@
 	                                                <td><c:out value = "${p.ten}"/></td>
 	                                                <td><c:out value = "${p.thongtin}" /></td>
 	                                                <td class="desc"><c:out value = "${p.giatien}"/> VNĐ</td>
-	                                                <%-- <td><c:out value = "${p.anh}"/></td> --%>
+	                                                <td><img src="${p.anh}" width="30" height="30"></td>
 	                                                <td>
 	                                                    <div class="table-data-feature">
 	                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">

@@ -33,6 +33,8 @@
 		location="/WEB-INF/views/vendor/" />		
 		<mvc:resources mapping="/SpryAssets/**"
 		location="/WEB-INF/views/SpryAssets/" />
+		<mvc:resources mapping="/fonts/**"
+		location="/WEB-INF/views/fonts/" />
 	
 
 </beans>

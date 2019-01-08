@@ -21,18 +21,25 @@ import medical.service.DrugService;
 public class ProductController {	
 	AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 	 @RequestMapping(value = {"/Admin-ManageProduct"}, method=RequestMethod.GET)
-	public String showListOfProduct(ModelMap model) {
+	public String showListOfProductforAdmin(ModelMap model) {
 		 DrugService drugService = (DrugService) context.getBean("drugService");
 		List<Drug> list = drugService.getAllThuoc();
     	model.addAttribute("productList",list);
 		return "/admin/Admin-ManageProduct";
 	}   
+	 @RequestMapping(value = {"/store"}, method=RequestMethod.GET)
+		public String showListOfProductforUser(ModelMap model) {
+			 DrugService drugService = (DrugService) context.getBean("drugService");
+			List<Drug> list = drugService.getAllThuoc();
+	    	model.addAttribute("productListUser",list);
+			return "store";
+		}   
     @RequestMapping(value = "/addProduct.do", method=RequestMethod.POST)
-	public String addThuoc(@RequestParam String ten,@RequestParam String loaihinh, @RequestParam String thongtin, @RequestParam String giatien,  ModelMap map ) throws Exception {
+	public String addThuoc(@RequestParam String ten,@RequestParam String loaihinh, @RequestParam String thongtin, @RequestParam String giatien, @RequestParam byte[] anh,  ModelMap map ) throws Exception {
     	
         DrugService drugService = (DrugService) context.getBean("drugService");
         Double giatienx=Double.parseDouble(giatien);
-        Drug drug=new Drug(ten, thongtin, giatienx,loaihinh);    	
+        Drug drug=new Drug(ten, thongtin, giatienx,loaihinh, anh);    	
     	drugService.insertThuoc(drug);
     	map.put("msg", "Thêm thành công!!");
 		return "redirect:Admin-ManageProduct";

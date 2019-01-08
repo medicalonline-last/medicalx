@@ -7,12 +7,13 @@ public class Drug {
 	private double giatien;
 	private String loaihinh;
 	private byte[] anh;
-	public Drug(String ten, String thongtin, double giatien, String loaihinh) {
+	public Drug(String ten, String thongtin, double giatien, String loaihinh, byte[] anh) {
 		super();
 		this.ten = ten;
 		this.thongtin = thongtin;
 		this.giatien = giatien;
 		this.loaihinh = loaihinh;
+		this.anh = anh;
 	}
 	public Drug() {
 		super();

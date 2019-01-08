@@ -188,14 +188,14 @@
 										<th>Ghi chú</th>
 									</tr>
 								</thead>
-								<c:forEach items = "${listLich}" var = "l">
+								<c:forEach items="${lichListUser}" var="lu">
 								<tbody>
 									<tr>
-										<td><c:out value = "${l.id}"/></td>
+										<td><c:out value = "${lu.id}"/></td>
 										<td></td>
-										<td><c:out value = "${l.ngay}"/></td>
-										<td><c:out value = "${l.gio}"/></td>
-										<td><c:out value = "${l.diadiem}"/></td>
+										<td><c:out value = "${lu.ngay}"/></td>
+										<td><c:out value = "${lu.gio}"/></td>
+										<td><c:out value = "${lu.diadiem}"/></td>
 										<td>Không</td>
 									</tr>
 								</tbody>

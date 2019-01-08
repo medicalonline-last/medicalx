@@ -8,4 +8,5 @@ public interface DoctorService {
 	public List<String> getTenDoctor();
 	public List<String> getChuyenmonDoctor();
 	public List<Doctor> findTenbychuyenmonDoctor();
+	public String getPhonglamviecDoctor();
 }

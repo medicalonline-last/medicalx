@@ -13,8 +13,9 @@
 		  insert into lichlamviec(ngay,gio,diadiem,idbacsi,idbenhnhan)
   values(#{ngay},#{gio},#{diadiem},#{idbacsi}, #{idbenhnhan});
 	</insert>
-	<select id="getAllLich" resultType="DatLich" resultMap="result">
+	<select id="getAllLich" resultMap="result">
         SELECT * FROM lichlamviec;
     </select>
+   
     
 </mapper>

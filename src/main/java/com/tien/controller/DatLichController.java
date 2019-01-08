@@ -16,14 +16,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import medical.config.AppConfig;
 import medical.entity.DatLich;
+import medical.entity.User;
 import medical.service.DatLichService;
 import medical.service.DoctorService;
+import medical.service.UserService;
 
 @Controller
 public class DatLichController {
 	AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 	DoctorService doctorService = (DoctorService) context.getBean("doctorService");
 	DatLichService datLichService = (DatLichService) context.getBean("datLichService");
+	
 	@RequestMapping(value = { "/medicalonline" }, method = RequestMethod.GET)
 	public String view(ModelMap model) {		
 		List<String> listPB = doctorService.getChuyenmonDoctor();
@@ -34,9 +37,27 @@ public class DatLichController {
 		return "medicalonline";
 	}
 	
-	@RequestMapping(value = { "/medicalonline" }, method = RequestMethod.POST)
-	public String datlich(DatLich datLich, @RequestParam String ngay, @RequestParam String khunggio, @RequestParam String phongban, @RequestParam String bacsi) throws Exception {
+	/*@RequestMapping(value = { "/medicalonline" }, method = RequestMethod.POST)
+	public String datlich( @RequestParam String ngay, @RequestParam String khunggio, @RequestParam String phongban, @RequestParam String bacsi) throws Exception {
 		Date date = new SimpleDateFormat("MM/dd/yyyy").parse(ngay);
+		
+		String diadiem = doctorService.getPhonglamviecDoctor();
+		DatLich datLich = new DatLich(date,khunggio,diadiem);
 		return null;
-	}
+	}*/
+	
+	@RequestMapping(value = "/Admin-Work", method=RequestMethod.GET)
+	public String showListOfLichforAdmin(ModelMap model) {
+		DatLichService datLichService = (DatLichService) context.getBean("datLichService");
+		List<DatLich> list = datLichService.getAllLich();
+    	model.addAttribute("lichListAdmin",list);
+		return "/admin/Admin-Work";
+ }
+	@RequestMapping(value = "/schedule", method=RequestMethod.GET)
+	public String showListOfLichForUser(ModelMap model) {
+		DatLichService datLichService = (DatLichService) context.getBean("datLichService");
+		List<DatLich> list = datLichService.getAllLich();
+    	model.addAttribute("lichListUser",list);
+		return "schedule";
+ }
 }

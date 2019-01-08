@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="s"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <!-- InstanceBegin template="/Templates/index's template.dwt" codeOutsideHTMLIsLocked="false" -->
@@ -175,16 +177,16 @@
 					</div>
 
 					<div class="products-box">
-
+						<c:forEach items="${productListUser}" var="pu">
 						<div id="medical-box">
 							<div class="medical-box-top">
-								<a href="#"><strong>Tên thuốc</strong></a> <img src=""
-									width="150" height="150" />
-								<h4>Giá tiền</h4>
+								<a><h3><strong><c:out value ="${pu.ten}"/></strong></h3></a> 
+								<img src="" width="150" height="150" />
+								<h4><c:out value ="${pu.giatien}"/> VNĐ</h4>
 							</div>
 							<div class="medical-box-bottom">
-								<a href="#" title="Thêm vào giỏ"><img
-									src="images/store_icon.png" /></a>
+								<a href="#" title="Thêm vào giỏ">
+								<img src="images/store_icon.png" /></a>
 								<div class="thuoc-chitiet">
 									<a href=""><p>
 											<strong>Chi tiết</strong>
@@ -192,200 +194,11 @@
 								</div>
 							</div>
 						</div>
-
-						<div id="medical-box">
-							<div class="medical-box-top">
-								<a href="#"><strong>Tên thuốc</strong></a> <img src=""
-									width="150" height="150" />
-								<h4>Giá tiền</h4>
-							</div>
-							<div class="medical-box-bottom">
-								<a href="#" title="Thêm vào giỏ"><img
-									src="images/store_icon.png" /></a>
-								<div class="thuoc-chitiet">
-									<a href=""><p>
-											<strong>Chi tiết</strong>
-										</p></a>
-								</div>
-							</div>
-						</div>
-
-						<div id="medical-box">
-							<div class="medical-box-top">
-								<a href="#"><strong>Tên thuốc</strong></a> <img src=""
-									width="150" height="150" />
-								<h4>Giá tiền</h4>
-							</div>
-							<div class="medical-box-bottom">
-								<a href="#" title="Thêm vào giỏ"><img
-									src="images/store_icon.png" /></a>
-								<div class="thuoc-chitiet">
-									<a href=""><p>
-											<strong>Chi tiết</strong>
-										</p></a>
-								</div>
-							</div>
-						</div>
-
-						<div id="medical-box">
-							<div class="medical-box-top">
-								<a href="#"><strong>Tên thuốc</strong></a> <img src=""
-									width="150" height="150" />
-								<h4>Giá tiền</h4>
-							</div>
-							<div class="medical-box-bottom">
-								<a href="#" title="Thêm vào giỏ"><img
-									src="images/store_icon.png" /></a>
-								<div class="thuoc-chitiet">
-									<a href=""><p>
-											<strong>Chi tiết</strong>
-										</p></a>
-								</div>
-							</div>
-						</div>
-
-						<div id="medical-box">
-							<div class="medical-box-top">
-								<a href="#"><strong>Tên thuốc</strong></a> <img src=""
-									width="150" height="150" />
-								<h4>Giá tiền</h4>
-							</div>
-							<div class="medical-box-bottom">
-								<a href="#" title="Thêm vào giỏ"><img
-									src="images/store_icon.png" /></a>
-								<div class="thuoc-chitiet">
-									<a href=""><p>
-											<strong>Chi tiết</strong>
-										</p></a>
-								</div>
-							</div>
-						</div>
-
-						<div id="medical-box">
-							<div class="medical-box-top">
-								<a href="#"><strong>Tên thuốc</strong></a> <img src=""
-									width="150" height="150" />
-								<h4>Giá tiền</h4>
-							</div>
-							<div class="medical-box-bottom">
-								<a href="#" title="Thêm vào giỏ"><img
-									src="images/store_icon.png" /></a>
-								<div class="thuoc-chitiet">
-									<a href=""><p>
-											<strong>Chi tiết</strong>
-										</p></a>
-								</div>
-							</div>
-						</div>
-
-						<div id="medical-box">
-							<div class="medical-box-top">
-								<a href="#"><strong>Tên thuốc</strong></a> <img src=""
-									width="150" height="150" />
-								<h4>Giá tiền</h4>
-							</div>
-							<div class="medical-box-bottom">
-								<a href="#" title="Thêm vào giỏ"><img
-									src="images/store_icon.png" /></a>
-								<div class="thuoc-chitiet">
-									<a href=""><p>
-											<strong>Chi tiết</strong>
-										</p></a>
-								</div>
-							</div>
-						</div>
-
-						<div id="medical-box">
-							<div class="medical-box-top">
-								<a href="#"><strong>Tên thuốc</strong></a> <img src=""
-									width="150" height="150" />
-								<h4>Giá tiền</h4>
-							</div>
-							<div class="medical-box-bottom">
-								<a href="#" title="Thêm vào giỏ"><img
-									src="images/store_icon.png" /></a>
-								<div class="thuoc-chitiet">
-									<a href=""><p>
-											<strong>Chi tiết</strong>
-										</p></a>
-								</div>
-							</div>
-						</div>
-
-						<div id="medical-box">
-							<div class="medical-box-top">
-								<a href="#"><strong>Tên thuốc</strong></a> <img src=""
-									width="150" height="150" />
-								<h4>Giá tiền</h4>
-							</div>
-							<div class="medical-box-bottom">
-								<a href="#" title="Thêm vào giỏ"><img
-									src="images/store_icon.png" /></a>
-								<div class="thuoc-chitiet">
-									<a href=""><p>
-											<strong>Chi tiết</strong>
-										</p></a>
-								</div>
-							</div>
-						</div>
-
-						<div id="medical-box">
-							<div class="medical-box-top">
-								<a href="#"><strong>Tên thuốc</strong></a> <img src=""
-									width="150" height="150" />
-								<h4>Giá tiền</h4>
-							</div>
-							<div class="medical-box-bottom">
-								<a href="#" title="Thêm vào giỏ"><img
-									src="images/store_icon.png" /></a>
-								<div class="thuoc-chitiet">
-									<a href=""><p>
-											<strong>Chi tiết</strong>
-										</p></a>
-								</div>
-							</div>
-						</div>
-
-						<div id="medical-box">
-							<div class="medical-box-top">
-								<a href="#"><strong>Tên thuốc</strong></a> <img src=""
-									width="150" height="150" />
-								<h4>Giá tiền</h4>
-							</div>
-							<div class="medical-box-bottom">
-								<a href="#" title="Thêm vào giỏ"><img
-									src="images/store_icon.png" /></a>
-								<div class="thuoc-chitiet">
-									<a href=""><p>
-											<strong>Chi tiết</strong>
-										</p></a>
-								</div>
-							</div>
-						</div>
-
-						<div id="medical-box">
-							<div class="medical-box-top">
-								<a href="#"><strong>Tên thuốc</strong></a> <img src=""
-									width="150" height="150" />
-								<h4>Giá tiền</h4>
-							</div>
-							<div class="medical-box-bottom">
-								<a href="#" title="Thêm vào giỏ"><img
-									src="images/store_icon.png" /></a>
-								<div class="thuoc-chitiet">
-									<a href=""><p>
-											<strong>Chi tiết</strong>
-										</p></a>
-								</div>
-							</div>
-						</div>
-
-					</div>
-
-					<div class="content-page">
+						</c:forEach>
+					<!-- <div class="content-page">
 						<span class="current-page">1</span> <a href="">2</a> <a href="">3</a>
 						<a href="">4</a>
-					</div>
+					</div> -->
 				</div>
 
 

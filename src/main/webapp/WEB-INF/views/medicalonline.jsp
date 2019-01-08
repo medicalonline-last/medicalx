@@ -502,7 +502,7 @@ label.upload-file input[type="file"] {
 																	</label>
 																	<div class="col-sm-10">
 																		<s:select path="listPB" class="select form-control"
-																			id="select_dev" name="phongban">
+																			id="select_dev" name="chuyenmon">
 																			<s:option value="NONE" label="Chọn khoa" />
 																			<s:options items="${listPB}" />
 																		</s:select>

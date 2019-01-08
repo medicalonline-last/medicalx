@@ -1,20 +1,28 @@
 package medical.entity;
 
+import java.sql.Date;
+
 public class DatLich {
 	private Integer id;
-	private String ngay;
+	private Date ngay;
 	private String gio;
 	private String diadiem;
 	private Integer idbenhnhan;
 	private Integer idbacsi;
 	
-	public DatLich(String ngay, String gio, String diadiem, int idbenhnhan, int idbacsi) {
+	public DatLich(Date ngay, String gio, String diadiem, int idbenhnhan, int idbacsi) {
 		super();
 		this.ngay = ngay;
 		this.diadiem = diadiem;
 		this.gio = gio;
 		this.idbacsi = idbacsi;
 		this.idbenhnhan = idbenhnhan;
+	}
+	public DatLich(Date ngay, String gio, String diadiem) {
+		super();
+		this.ngay = ngay;
+		this.diadiem = diadiem;
+		this.gio = gio;
 	}
 	public DatLich() {
 		super();
@@ -25,10 +33,10 @@ public class DatLich {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getNgay() {
+	public Date getNgay() {
 		return ngay;
 	}
-	public void setNgay(String ngay) {
+	public void setNgay(Date ngay) {
 		this.ngay = ngay;
 	}
 	public String getGio() {

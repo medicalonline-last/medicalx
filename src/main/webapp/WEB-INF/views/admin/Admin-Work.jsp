@@ -260,21 +260,23 @@
                                     <table class="table table-data2">
                                         <thead>
                                             <tr>
+                                            	<th>No.</th>
                                                 <th>Tên Bệnh Nhân</th>
                                                 <th>Tên Bác Sĩ</th>
                                                 <th>Thời Gian</th>
-                                                <th>Khung Giời</th>
+                                                <th>Khung Giờ</th>
                                                 <th>Địa Điểm</th>
                                             </tr>
                                         </thead>
-                                        <c:forEach items = "${listLich}" var = "l">
+                                        <c:forEach items = "${lichListAdmin}" var = "la">
                                         <tbody>
                                             <tr class="tr-shadow">
+                                            	<td><c:out value = "${la.id}"/></td>
                                                 <td></td>
                                                 <td></td>
-                                                <td><c:out value = "${l.thoigian}"/></td>
-                                                <td><c:out value = "${l.gio}"/></td>
-                                                <td><c:out value = "${l.diadiem}"/></td>
+                                                <td><c:out value = "${la.ngay}"/></td>
+                                                <td><c:out value = "${la.gio}"/></td>
+                                                <td><c:out value = "${la.diadiem}"/></td>
                                                 <td>
                                                     <div class="table-data-feature">
                                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">

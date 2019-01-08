@@ -28,8 +28,8 @@
         SELECT distinct chuyenmon FROM bacsi;
     </select>
     
-    <select id="getPhonglamviecDoctor" resultType="Doctor" resultMap="result">
-        SELECT phonglamviec FROM bacsi where ten = #{ten};
+    <select id="getPhonglamviecDoctor" resultType="String">
+        SELECT phonglamviec FROM bacsi where chuyenmon = #{chuyenmon};
     </select>
     <!-- <select id="findByTen" parameterType="String" resultType="Doctor" resultMap="result">
         SELECT * FROM bacsi WHERE ten = #{ten};
