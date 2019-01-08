@@ -516,7 +516,7 @@ label.upload-file input[type="file"] {
 																	</label>
 																	<div class="col-sm-10">
 																		<s:select path="listBS" class="select form-control"
-																			id="select_doctor" name="bacsi">
+																			id="select_doctor" name="ten">
 																			<s:option value="NONE" label="Chọn tên bác sĩ" />
 																			<s:options items="${listBS}" />
 																		</s:select>
@@ -534,16 +534,13 @@ label.upload-file input[type="file"] {
 																			<div class="input-group-addon">
 																				<i class="fa fa-calendar"> </i>
 																			</div>
-																			<input class="form-control" id="date" name="date"
-																				placeholder="MM/DD/YYYY" type="text" />
+																			<input  class="form-control"  name="date_t" 
+																				 type="date" />
 																		</div>
 																	</div>
-																</div>
-<<<<<<< HEAD
-																<input style="display:" type="text" id="khunggio"
-																	value="">
-																	<input value="${slogin}" disabled></input>
-=======
+																</div>																
+																	<input name="usernow" value="${slogin}" type="text" style="display:none">
+
 																<div class="form-group ">
 					                                              <label class="control-label col-sm-12 requiredField" for="select_dev">
 					                                               Khung Giờ
@@ -552,10 +549,10 @@ label.upload-file input[type="file"] {
 					                                               </span>
 					                                              </label>
 					                                              <div class="col-sm-10">
-					                                               	<input class="form-control" id="khunggio" name="khunggio" type="text" placeholder="Bấm chọn khung giờ..." disabled>
+					                                               	<input class="form-control" id="khunggio" name="khunggio" type="text" placeholder="Bấm chọn khung giờ...">
 					                                              </div>
 					                                             </div>
->>>>>>> e1f41e46cba12ace9b003f2f8d03ea1e6bde8142
+
 																	<div class="form-group">
 																		<div class="col-sm-10 col-sm-offset-2">
 																			<button class="btn btn-primary " type="submit">Đặt
@@ -597,6 +594,7 @@ label.upload-file input[type="file"] {
 													onclick="myFunction(this.value)">16h30 - 17h30</button>
 
 											</div>
+											<h3>${msg}</h3>
 										</div>
 									</div>
 								</div>

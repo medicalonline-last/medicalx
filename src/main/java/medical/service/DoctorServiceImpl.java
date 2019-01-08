@@ -12,17 +12,24 @@ import medical.mapper.DoctorMapper;
 public class DoctorServiceImpl implements DoctorService{
 	@Autowired
 	DoctorMapper doctorMapper;
-	public List<String> getTenDoctor(){
+
+	public List<String> getTenDoctor() {
+		// TODO Auto-generated method stub
 		return doctorMapper.getTenDoctor();
 	}
-	public List<String> getChuyenmonDoctor(){
+
+	public List<String> getChuyenmonDoctor() {
+		// TODO Auto-generated method stub
 		return doctorMapper.getChuyenmonDoctor();
 	}
-	public List<Doctor> findTenbychuyenmon(){
-		return doctorMapper.findTenbychuyenmonDoctor();
-	}
-	public List<Doctor> findTenbychuyenmonDoctor() {
+
+	public Doctor getDoctorbyName(String ten) {
 		// TODO Auto-generated method stub
-		return doctorMapper.findTenbychuyenmonDoctor();
+		return doctorMapper.getDoctorbyName(ten);
 	}
+
+	
+
+
+	
 }

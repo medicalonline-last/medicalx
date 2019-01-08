@@ -16,14 +16,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import medical.config.AppConfig;
 import medical.entity.DatLich;
+import medical.entity.Doctor;
+import medical.entity.User;
 import medical.service.DatLichService;
 import medical.service.DoctorService;
+import medical.service.UserService;
 
 @Controller
 public class DatLichController {
 	AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 	DoctorService doctorService = (DoctorService) context.getBean("doctorService");
 	DatLichService datLichService = (DatLichService) context.getBean("datLichService");
+	UserService userService=(UserService) context.getBean("userService");
 	@RequestMapping(value = { "/medicalonline" }, method = RequestMethod.GET)
 	public String view(ModelMap model) {		
 		List<String> listPB = doctorService.getChuyenmonDoctor();
@@ -33,17 +37,21 @@ public class DatLichController {
 		model.addAttribute("listPB", listPB);
 		return "medicalonline";
 	}
-<<<<<<< HEAD
-		/*@RequestMapping(value = { "/medicalonline" }, method = RequestMethod.POST)
-		public String datlich() {
-			return null;
-		}*/
-=======
+
 	
 	@RequestMapping(value = { "/medicalonline" }, method = RequestMethod.POST)
-	public String datlich(DatLich datLich, @RequestParam String ngay, @RequestParam String khunggio, @RequestParam String phongban, @RequestParam String bacsi) throws Exception {
-		Date date = new SimpleDateFormat("MM/dd/yyyy").parse(ngay);
-		return null;
+	public String datlich(ModelMap modelMap , DatLich datLich,@RequestParam String usernow, @RequestParam String date_t, @RequestParam String khunggio,@RequestParam String ten){
+		/* SimpleDateFormat formatter = new SimpleDateFormat("yyy/MM/dd");
+		 String strDate = formatter.format(date_t)*/;
+		 Doctor doctor=doctorService.getDoctorbyName(ten);
+		 /*Doctor doctor=doctorService.getDoctorbyID(idBs);*/
+		 User user=userService.selectinfo(usernow);		 
+		 
+		/* datLich=new DatLich(date_t,khunggio,doctor.getPhonglamviec(), user.getId(), doctor.getId());*/
+		 datLich=new DatLich(date_t,khunggio,doctor.getPhonglamviec(), user.getId(), doctor.getId());		 
+		 datLichService.insertDatLich(datLich);
+		 modelMap.addAttribute("msg","Đặt lịch thành công");
+		return "medicalonline";
 	}
->>>>>>> e1f41e46cba12ace9b003f2f8d03ea1e6bde8142
+
 }

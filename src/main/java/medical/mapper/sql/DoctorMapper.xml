@@ -28,13 +28,18 @@
         SELECT distinct chuyenmon FROM bacsi;
     </select>
     
-    <select id="getPhonglamviecDoctor" resultType="Doctor" resultMap="result">
+    <!-- <select id="getPhonglamviecDoctor" resultType="Doctor" resultMap="result">
         SELECT phonglamviec FROM bacsi where ten = #{ten};
     </select>
-    <!-- <select id="findByTen" parameterType="String" resultType="Doctor" resultMap="result">
-        SELECT * FROM bacsi WHERE ten = #{ten};
-    </select> -->
+       
     <select id="findTenbychuyenmonDoctor" resultType="Doctor" resultMap="result">
         SELECT ten FROM bacsi where chuyenmon = #{chuyenmon};
+    </select> -->
+<!--      <select id="getIDbyName" resultMap="result" parameterType="String">
+        SELECT * FROM bacsi  where ten=#{bacsi} LIMIT 1;
+    </select> -->
+    <select id="getDoctorbyName" resultMap="result" parameterType="int">
+        SELECT * FROM bacsi  where ten = #{ten} LIMIT 1;
     </select>
+
 </mapper>
