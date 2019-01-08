@@ -358,7 +358,7 @@ label.upload-file input[type="file"] {
 					<div class="top_divider"></div>
 				</div>
 			</div>
-			<div class="user" style="background-image: url(images/info-user.png)"></div>
+			<div class="user" style="background-image: url(images/info-user.png)"></div>			
 		</div>
 		<!-- HEADER: end -->
 		<div class="clr"></div>
@@ -541,6 +541,7 @@ label.upload-file input[type="file"] {
 																</div>
 																<input style="display:" type="text" id="khunggio"
 																	value="">
+																	<input value="${slogin}" disabled></input>
 																	<div class="form-group">
 																		<div class="col-sm-10 col-sm-offset-2">
 																			<button class="btn btn-primary " type="submit">Đặt
