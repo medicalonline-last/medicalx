@@ -302,9 +302,9 @@
                                         <tbody>
                                             <tr class="tr-shadow">
                                                 <td>Lori Lynch</td>
-                                                <td>Bác sĩ</td>
-                                                <td><c:out value = "${c.username}"/></td>
-                                                <td><c:out value = "${c.password}"/></td>
+                                                <td><c:out value="${u.idphanquyen }"/></td>
+                                                <td><c:out value = "${u.username}"/></td>
+                                                <td><c:out value = "${u.password}"/></td>
                                                 <td>0978855695</td>
                                                 <td>
                                                     <span class="block-email">lori@example.com</span>
@@ -342,7 +342,7 @@
                                                 <form role="form" method="POST" action="addUser.do">
                                                     <input type="hidden" name="_token" value="">
                                                     <div class="rs-select2--light rs-select2--md">
-                                                        <select class="js-select2" name="property">
+                                                        <select class="js-select2" name="loainguoidung">
                                                             <option selected="selected">Loại người dùng</option>
                                                             <option value="Bệnh Nhân">Bệnh Nhân</option>
                                                             <option value="Bác Sĩ">Bác Sĩ</option>

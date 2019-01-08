@@ -55,14 +55,4 @@ public class DatLich {
 	public void setDiadiem(String diadiem) {
 		this.diadiem = diadiem;
 	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public void setIdbenhnhan(Integer idbenhnhan) {
-		this.idbenhnhan = idbenhnhan;
-	}
-	public void setIdbacsi(Integer idbacsi) {
-		this.idbacsi = idbacsi;
-	}
-	
 }

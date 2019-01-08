@@ -332,7 +332,7 @@
                                                     <input type="hidden" name="_token" value="">
                                                     <div class="rs-select2--light rs-select2--md">
                                                         <select class="js-select2" name="loaihinh">
-                                                            <option selected="selected">Loại hình</option>
+                                                            <option selected="selected" value="NONE">Loại hình</option>
                                                             <option value="Thuốc">Thuốc</option>
                                                             <option value="Dịch Vụ">Dịch vụ</option>
                                                         </select>

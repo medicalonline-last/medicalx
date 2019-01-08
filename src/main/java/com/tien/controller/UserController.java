@@ -23,12 +23,12 @@ import medical.service.UserService;
 public class UserController {
 	public static  User user2;
 	AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-	@RequestMapping(value="addUser.do", method = RequestMethod.POST)
+	@RequestMapping(value="/addUser.do", method = RequestMethod.POST)
 	public String addminAddUser(User user, @RequestParam String username, @RequestParam String password, @RequestParam String repeatpassword, @RequestParam String loainguoidung, ModelMap map) throws IOException {
 		user.setUsername(username);
 		user.setPassword(password);
-		Integer phanquyen;
-		if (loainguoidung.equals("Bệnh Nhân")) {
+		int phanquyen;
+		if (loainguoidung=="Bệnh Nhân") {
 			phanquyen = 3;
 		} else {
 			phanquyen = 1;
@@ -41,25 +41,25 @@ public class UserController {
 		if (password.equals(repeatpassword)==true&&checkuser==0) {				
 	        userService.insertUser(user);
 	        map.put("msg", "Đăng kí thành công");
-	        return "admin/Admin-ManageUser";
+	        return "redirect:Admin-ManageUser";
 		}
 		else if  (checkuser==1) {
 			map.put("msg", "Tài khoản đã tồn lại");
-			return "admin/Admin-ManageUser";
+			return "redirect:Admin-ManageUser";
 		}
 			else {
 				map.put("msg", "Mật khẩu nhập lại không đúng");
-				return "admin/Admin-ManageUser";
+				return "redirect:Admin-ManageUser";
 			}
 	 		  
 		
 	}
-	 @RequestMapping(value = "/addUser.do", method=RequestMethod.GET)
+	 @RequestMapping(value = "/Admin-ManageUser", method=RequestMethod.GET)
 		public String showListOfProduct(ModelMap model) {
 			UserService userService = (UserService) context.getBean("userService");
 			List<User> list = userService.selectAllUser();
 	    	model.addAttribute("userList",list);
-			return "/admin/Admin-ManageProduct";
+			return "/admin/Admin-ManageUser";
 	 }
 	
 	@RequestMapping(value="/register.do", method=RequestMethod.POST)

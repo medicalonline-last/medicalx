@@ -3,21 +3,21 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="s"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<link
-	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-	rel="stylesheet" id="bootstrap-css">
-	<script
-		src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-	<script
-		src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<html xmlns="http://www.w3.org/1999/xhtml">
 <!-- InstanceBegin template="/Templates/index's template.dwt" codeOutsideHTMLIsLocked="false" -->
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <!--  jQuery -->
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <link rel="stylesheet"
 	href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css"/>
+	<script
+		src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<script
+		src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
 <link rel="stylesheet"
 	href="https://formden.com/static/cdn/bootstrap-iso.css" />
@@ -492,7 +492,8 @@ label.upload-file input[type="file"] {
 												<div class="container-fluid">
 													<div class="row">
 														<div class="col-md-12 col-sm-12 col-xs-12">
-															<form class="form-horizontal" action="medicalonline" method="post">
+															<form class="form-horizontal" action="medicalonline"
+																method="post">
 
 																<div class="form-group ">
 																	<label class="control-label col-sm-12 requiredField"
@@ -500,10 +501,10 @@ label.upload-file input[type="file"] {
 																		class="asteriskField"> * </span>
 																	</label>
 																	<div class="col-sm-10">
-																		<s:select  path="listPB" class="select form-control" id="select_dev"
-																			name="phongban">
+																		<s:select path="listPB" class="select form-control"
+																			id="select_dev" name="phongban">
 																			<s:option value="NONE" label="Chọn khoa" />
-																			<s:options items="${listPB}"/>
+																			<s:options items="${listPB}" />
 																		</s:select>
 																	</div>
 																</div>
@@ -514,11 +515,10 @@ label.upload-file input[type="file"] {
 																		class="asteriskField"> * </span>
 																	</label>
 																	<div class="col-sm-10">
-																		<s:select path="listBS"
-																			class="select form-control" id="select_doctor"
-																			name="doctor">
+																		<s:select path="listBS" class="select form-control"
+																			id="select_doctor" name="doctor">
 																			<s:option value="NONE" label="Chọn tên bác sĩ" />
-																			<s:options items="${listBS}"/>
+																			<s:options items="${listBS}" />
 																		</s:select>
 																	</div>
 																</div>
@@ -539,15 +539,14 @@ label.upload-file input[type="file"] {
 																		</div>
 																	</div>
 																</div>
-																<input style="display: " type="text" id="khunggio"
+																<input style="display:" type="text" id="khunggio"
 																	value="">
-																<div class="form-group">
-																	<div class="col-sm-10 col-sm-offset-2">
-																		<button class="btn btn-primary "
-																			type="submit">Đặt Lịch Khám</button>
+																	<div class="form-group">
+																		<div class="col-sm-10 col-sm-offset-2">
+																			<button class="btn btn-primary " type="submit">Đặt
+																				Lịch Khám</button>
+																		</div>
 																	</div>
-																</div>
-
 															</form>
 														</div>
 													</div>
@@ -695,74 +694,74 @@ label.upload-file input[type="file"] {
 				</div>
 			</div>
 			<!-- InstanceEndEditable -->
+			<div class="clr"></div>
+			<!--FOOTER: start-->
+			<div class="footer">
+				<div class="footer-left">
+					<h1 id="footer-word">Medical Online</h1>
+					<h3 id="footer-word">BỆNH VIỆN ĐA KHOA ĐÔNG ANH</h3>
+					<div class="footer-left-info">
+
+						<div class="footer-left-info-word" id="footer-word">
+							<a><img src="images/location.png" alt="location" height="25"
+								width="22"/ ></a>
+							<p>
+								<strong>Địa chỉ: </strong> Tổ 1 - Thị trấn Đông Anh – Hà Nội
+							</p>
+						</div>
+
+						<div class="footer-left-info-word" id="footer-word">
+							<a><img src="images/phone.png" alt="location" height="24"
+								width="22"/ ></a>
+							<p>
+								<strong>Số Điện Thoại: </strong> 0243.9655392 – 0243.8832450
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="footer-right">
+					<h2 id="footer-word">Bản đồ chỉ dẫn</h2>
+					<a
+						href="https://www.google.com/maps/place/B%E1%BB%87nh+Vi%E1%BB%87n+%C4%90a+Khoa+%C4%90%C3%B4ng+Anh/@21.1244813,105.8010464,12.17z/data=!4m5!3m4!1s0x313500ddeda3e3e7:0xf5016d28393fd8cf!8m2!3d21.1393037!4d105.8534046"><img
+						src="images/bg-map.png" /></a>
+				</div>
+				<div class="footer-bottom">
+					<div class="footer-bottom-info" id="footer-word">
+						<b>Bản quyền thuộc về Medical Online</b>
+						<p>
+							<strong>Địa chỉ:</strong> số 88, đường Bắc Hồng, xã Bắc Hồng,
+							Đông Anh, Hà Nội
+						</p>
+						<p>
+							<strong>Điện thoại:</strong> 0978855695
+						</p>
+						<p>
+							<strong>Email:</strong> anhpt.hust@gmail.com
+						</p>
+					</div>
+					<!-- InstanceBeginEditable name="footer-menu" -->
+					<div class="footer-bottom-menu">
+						<ul>
+							<li class="active"><a href="index.html">TRANG CHỦ</a></li>
+							<li><a href="userpage.html">TRANG CÁ NHÂN</a></li>
+							<li><a href="store.html">HIỆU THUỐC</a></li>
+							<li><a href="billcontent.html">THANH TOÁN</a></li>
+							<li><a href="schedule.html">LỊCH LÀM VIỆC</a></li>
+						</ul>
+					</div>
+					<script type="text/javascript">
+						var TabbedPanels1 = new Spry.Widget.TabbedPanels(
+								"TabbedPanels1");
+					</script>
+					<!-- InstanceEndEditable -->
+				</div>
+			</div>
+			<!--FOOTER: end-->
 		</div>
-		<!-- Content-body: end-->
+	</div>
+	<!-- Content-body: end-->
 	</div>
 	<!-- Main - body: end -->
-	<div class="clr"></div>
-	<!--FOOTER: start-->
-	<div class="footer">
-		<div class="footer-left">
-			<h1 id="footer-word">Medical Online</h1>
-			<h3 id="footer-word">BỆNH VIỆN ĐA KHOA ĐÔNG ANH</h3>
-			<div class="footer-left-info">
-
-				<div class="footer-left-info-word" id="footer-word">
-					<a><img src="images/location.png" alt="location" height="25"
-						width="22"/ ></a>
-					<p>
-						<strong>Địa chỉ: </strong> Tổ 1 - Thị trấn Đông Anh – Hà Nội
-					</p>
-				</div>
-
-				<div class="footer-left-info-word" id="footer-word">
-					<a><img src="images/phone.png" alt="location" height="24"
-						width="22"/ ></a>
-					<p>
-						<strong>Số Điện Thoại: </strong> 0243.9655392 – 0243.8832450
-					</p>
-				</div>
-			</div>
-		</div>
-		<div class="footer-right">
-			<h2 id="footer-word">Bản đồ chỉ dẫn</h2>
-			<a
-				href="https://www.google.com/maps/place/B%E1%BB%87nh+Vi%E1%BB%87n+%C4%90a+Khoa+%C4%90%C3%B4ng+Anh/@21.1244813,105.8010464,12.17z/data=!4m5!3m4!1s0x313500ddeda3e3e7:0xf5016d28393fd8cf!8m2!3d21.1393037!4d105.8534046"><img
-				src="images/bg-map.png" /></a>
-		</div>
-		<div class="footer-bottom">
-			<div class="footer-bottom-info" id="footer-word">
-				<b>Bản quyền thuộc về Medical Online</b>
-				<p>
-					<strong>Địa chỉ:</strong> số 88, đường Bắc Hồng, xã Bắc Hồng, Đông
-					Anh, Hà Nội
-				</p>
-				<p>
-					<strong>Điện thoại:</strong> 0978855695
-				</p>
-				<p>
-					<strong>Email:</strong> anhpt.hust@gmail.com
-				</p>
-			</div>
-			<!-- InstanceBeginEditable name="footer-menu" -->
-			<div class="footer-bottom-menu">
-				<ul>
-					<li class="active"><a href="index.html">TRANG CHỦ</a></li>
-					<li><a href="userpage.html">TRANG CÁ NHÂN</a></li>
-					<li><a href="store.html">HIỆU THUỐC</a></li>
-					<li><a href="billcontent.html">THANH TOÁN</a></li>
-					<li><a href="schedule.html">LỊCH LÀM VIỆC</a></li>
-				</ul>
-			</div>
-			<script type="text/javascript">
-				var TabbedPanels1 = new Spry.Widget.TabbedPanels(
-						"TabbedPanels1");
-			</script>
-			<!-- InstanceEndEditable -->
-		</div>
-	</div>
-	<!--FOOTER: end-->
-	</div>
 </body>
 <!-- InstanceEnd -->
 	</html>
