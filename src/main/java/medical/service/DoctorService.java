@@ -9,4 +9,5 @@ public interface DoctorService {
 	public List<String> getChuyenmonDoctor();
 	public List<Doctor> findTenbychuyenmonDoctor();
 	public String getPhonglamviecDoctor();
+	public Doctor getDoctorbyName(String ten);
 }

@@ -272,7 +272,9 @@
                                         <tbody>
                                             <tr class="tr-shadow">
                                             	<td><c:out value = "${la.id}"/></td>
+                                         
                                                 <td></td>
+                                               
                                                 <td></td>
                                                 <td><c:out value = "${la.ngay}"/></td>
                                                 <td><c:out value = "${la.gio}"/></td>

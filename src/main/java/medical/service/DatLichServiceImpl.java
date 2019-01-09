@@ -19,4 +19,8 @@ public class DatLichServiceImpl implements DatLichService {
 		// TODO Auto-generated method stub
 		return datLichMapper.getAllLich();
 	}
+	public String getNameBSFromIdLich() {
+		// TODO Auto-generated method stub
+		return datLichMapper.getNameBSFromIdLich();
+	}
 }

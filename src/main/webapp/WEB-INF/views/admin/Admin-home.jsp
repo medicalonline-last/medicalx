@@ -51,7 +51,7 @@
                     <div class="image img-cir img-120">
                         <img src="Admin-images/icon/Admin.JPG" alt="Admin" />
                     </div>
-                    <h4 class="name">Tuấn Anh</h4>
+                    <%-- <h4 class="name">${slogin}</h4> --%>
                     <a href="#">Đăng xuất</a>
                 </div>
                 <nav class="navbar-sidebar2">
@@ -186,7 +186,7 @@
                     <div class="image img-cir img-120">
                         <img src="Admin-images/icon/Admin.JPG" alt="John Doe" />
                     </div>
-                    <h4 class="name">Tuấn Anh</h4>
+                    <%-- <h4 class="name">${slogin}</h4> --%>
                     <a href="#">Đăng xuất</a>
                 </div>
                 <nav class="navbar-sidebar2">

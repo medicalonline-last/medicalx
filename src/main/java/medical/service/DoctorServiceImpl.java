@@ -29,4 +29,8 @@ public class DoctorServiceImpl implements DoctorService{
 		// TODO Auto-generated method stub
 		return doctorMapper.getPhonglamviecDoctor();
 	}
+	public Doctor getDoctorbyName(String ten) {
+		// TODO Auto-generated method stub
+		return doctorMapper.getDoctorbyName(ten);
+	}
 }
