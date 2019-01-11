@@ -186,8 +186,10 @@
                     <div class="image img-cir img-120">
                         <img src="Admin-images/icon/Admin.JPG" alt="John Doe" />
                     </div>
-                    <%-- <h4 class="name">${slogin}</h4> --%>
-                    <a href="#">Đăng xuất</a>
+                    <h4 class="name">${slogin}</h4>
+                    <form action="logout">
+                    <a href="#" onclick="if (!(confirm('Bạn có muốn đăng xuất không?'))) return false" >Đăng xuất</a>
+                    </form>
                 </div>
                 <nav class="navbar-sidebar2">
                     <ul class="list-unstyled navbar__list">

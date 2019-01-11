@@ -14,10 +14,10 @@
 <!-- <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css"/> -->
-	<script
-		src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-	<script
-		src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
 <link rel="stylesheet"
 	href="https://formden.com/static/cdn/bootstrap-iso.css" />
@@ -534,31 +534,32 @@ label.upload-file input[type="file"] {
 																			<div class="input-group-addon">
 																				<i class="fa fa-calendar"> </i>
 																			</div>
-																			<input class="form-control"  name="date_t" type="date" />
+																			<input class="form-control" name="date_t" type="date" />
 																		</div>
 																	</div>
 																</div>
-																
+
 																<div class="form-group ">
-					                                              <label class="control-label col-sm-12 requiredField" for="select_dev">
-					                                               Khung Giờ
-					                                               <span class="asteriskField">
-					                                                *
-					                                               </span>
-					                                              </label>
-					                                              <div class="col-sm-10">
-					                                               	<input class="form-control" id="khunggio" name="khunggio" type="text" placeholder="Bấm chọn khung giờ..." />
-					                                              </div>
-					                                             </div>
-					                                             
-					                                             <input name="usernow" value="${slogin}" type="text" style="display:none"/>
-					                                             
-																	<div class="form-group">
-																		<div class="col-sm-10 col-sm-offset-2">
-																			<button class="btn btn-primary " type="submit">Đặt
-																				Lịch Khám</button>
-																		</div>
+																	<label class="control-label col-sm-12 requiredField"
+																		for="select_dev"> Khung Giờ <span
+																		class="asteriskField"> * </span>
+																	</label>
+																	<div class="col-sm-10">
+																		<input class="form-control" id="khunggio"
+																			name="khunggio" type="text"
+																			placeholder="Bấm chọn khung giờ..." />
 																	</div>
+																</div>
+
+																<input name="usernow" value="${slogin}" type="text"
+																	style="display: none" />
+
+																<div class="form-group">
+																	<div class="col-sm-10 col-sm-offset-2">
+																		<button class="btn btn-primary " type="submit">Đặt
+																			Lịch Khám</button>
+																	</div>
+																</div>
 															</form>
 														</div>
 													</div>
@@ -777,4 +778,4 @@ label.upload-file input[type="file"] {
 	<!-- Main - body: end -->
 </body>
 <!-- InstanceEnd -->
-	</html>
+</html>

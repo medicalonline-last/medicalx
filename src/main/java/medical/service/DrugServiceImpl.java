@@ -20,17 +20,17 @@ public class DrugServiceImpl implements DrugService {
 		// TODO Auto-generated method stub
 		return drugmapper.getAllThuoc();
 	}
-	
+	public int deleteThuoc(int thuocId) {
+		// TODO Auto-generated method stub
+		return drugmapper.deleteThuoc(thuocId);
+	}
 
 	/*public int updateThuoc(Drug drug) {
 		// TODO Auto-generated method stub
 		return drugmapper.updateThuoc(drug);
 	}
 
-	public int deleteThuoc(int thuocId) {
-		// TODO Auto-generated method stub
-		return drugmapper.deleteThuoc(thuocId);
-	}
+
 
 	public List<Drug> getAllThuoc() {
 		// TODO Auto-generated method stub

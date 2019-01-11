@@ -16,8 +16,10 @@
 	<select id="getAllLich" resultMap="result">
         SELECT * FROM lichlamviec;
     </select>
-   <select id="getNameBSFromIdLich" resultType="String" resultMap="result">
+   <select id="getNameBSFromIdLich" resultType="String" >
    		select ten from medical.bacsi, medical.lichlamviec where bacsi.id = lichlamviec.idbacsi;
    </select>
-    
+    <delete id="deleteLich" parameterType="int">
+        DELETE from LICHLAMVIEC WHERE ID = #{lichId};
+    </delete>
 </mapper>

@@ -291,6 +291,9 @@
                                             </tr>
                                         </thead>
                                         <c:forEach items="${productList}" var="p">
+                                        <c:url var="deleteLink2" value="/deleteProduct">
+						                        <c:param name="thuocId" value="${p.id}" />
+						                    </c:url>
                                         <tbody>
 	                                            <tr class="tr-shadow">
 	                                                <td><c:out	value="${p.loaihinh}" /></td> 
@@ -304,7 +307,7 @@
 	                                                            <a href="#"><i class="zmdi zmdi-edit" ></i></a>
 	                                                        </button>
 	                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-	                                                            <a href="#" onclick="if (!(confirm('Bạn có muốn xóa sản phẩm này?'))) return false"><i class="zmdi zmdi-delete"></i></a>
+	                                                            <a href="${deleteLink2}" onclick="if (!(confirm('Bạn có muốn xóa sản phẩm này?'))) return false"><i class="zmdi zmdi-delete"></i></a>
 	                                                        </button>
 	                                                    </div>
 	                                                </td>

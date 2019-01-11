@@ -53,16 +53,25 @@ public class DatLichController {
     	model.addAttribute("lichListAdmin",list);
 		return "/admin/Admin-Work";
  }
-	@RequestMapping(method=RequestMethod.GET)
+	/*@RequestMapping(method=RequestMethod.GET)
 	public String showBSListOfLichforAdmin(ModelMap model) {
 		String list = datLichService.getNameBSFromIdLich();
     	model.addAttribute("lichListBSAdmin",list);
 		return "/admin/Admin-Work";
- }
+ }*/
 	@RequestMapping(value = "/schedule", method=RequestMethod.GET)
 	public String showListOfLichForUser(ModelMap model) {
 		List<DatLich> list = datLichService.getAllLich();
     	model.addAttribute("lichListUser",list);
 		return "schedule";
- }
+	}
+	
+	@RequestMapping(value = "deleteLich")
+		 	public String deleteLichById(ModelMap model, @RequestParam("lichId") int lichId) {
+		 		UserService userService = (UserService) context.getBean("userService");
+		 		userService.deleteUserById(lichId);
+		 		model.put("msgdellich", "Delete sussces!!!");
+		 		return "redirect:Admin-Work.html";
+		 	}
+ 
 }

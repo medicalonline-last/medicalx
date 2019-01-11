@@ -23,4 +23,8 @@ public class DatLichServiceImpl implements DatLichService {
 		// TODO Auto-generated method stub
 		return datLichMapper.getNameBSFromIdLich();
 	}
+	public int deleteLich(int lichId) {
+		// TODO Auto-generated method stub
+		return datLichMapper.deleteLich(lichId);
+	}
 }

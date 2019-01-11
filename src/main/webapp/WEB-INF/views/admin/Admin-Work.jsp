@@ -54,7 +54,10 @@
                         <img src="Admin-images/icon/Admin.JPG" alt="Admin" />
                     </div>
                     <h4 class="name">Tuấn Anh</h4>
-                    <a href="#">Đăng xuất</a>
+                    <form action="logout">
+                    	<a href="#" onclick="if (!(confirm('Bạn có muốn đăng xuất không?'))) return false">Đăng xuất</a>
+                    </form>
+                    
                 </div>
                 <nav class="navbar-sidebar2">
                     <ul class="list-unstyled navbar__list">
@@ -256,6 +259,7 @@
                             <div class="col-md-12">
                                 <!-- DATA TABLE -->
                                 <h3 class="title-5 m-b-35">Lịch Hẹn Khám Bệnh</h3>
+                                <h4 style="color: red;">${msgdellich}</h4>
                                 <div class="table-responsive table-responsive-data2">
                                     <table class="table table-data2">
                                         <thead>
@@ -269,10 +273,13 @@
                                             </tr>
                                         </thead>
                                         <c:forEach items = "${lichListAdmin}" var = "la">
+                                        <c:url var="deleteLinkLich" value="/deleteLich">
+						                        <c:param name="lichId" value="${la.id}" />
+						                </c:url>
                                         <tbody>
                                             <tr class="tr-shadow">
                                             	<td><c:out value = "${la.id}"/></td>
-                                         
+                                         		
                                                 <td></td>
                                                
                                                 <td></td>
@@ -282,7 +289,7 @@
                                                 <td>
                                                     <div class="table-data-feature">
                                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                            <a href="#" onclick="if (!(confirm('Bạn có muốn xóa sản phẩm này?'))) return false"><i class="zmdi zmdi-delete"></i></a>
+                                                            <a href="${deleteLinkLich}" onclick="if (!(confirm('Bạn có muốn xóa sản phẩm này?'))) return false"><i class="zmdi zmdi-delete"></i></a>
                                                         </button>
                                                     </div>
                                                 </td>

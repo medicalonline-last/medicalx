@@ -8,8 +8,9 @@ public interface DrugService {
 	
 	public int insertThuoc(Drug drug);
    /* public int updateThuoc(Drug drug);
-    public int deleteThuoc(int thuocId);
+
     
     public int findById(Drug drug);*/
+    public int deleteThuoc(int thuocId);
 	public List<Drug> getAllThuoc();
 }

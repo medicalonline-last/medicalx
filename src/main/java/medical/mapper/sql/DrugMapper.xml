@@ -14,15 +14,13 @@
 	<!-- <update id="updateThuoc" parameterType="drug">
         UPDATE THUOC SET  ten = #{ten}, thongtin = #{thongtin}, giatien = #{giatien}, anh= #{anh} WHERE ID = #{id};
     </update>
-    
-    <delete id="deleteThuoc" parameterType="int">
-        DELETE from THUOC WHERE ID = #{thuocId};
-    </delete>
-    
+       
      <select id="findById" parameterType="int" resultType="drug" resultMap="result">
         SELECT * FROM THUOC WHERE id = #{thuocId};
     </select> -->
-    
+    <delete id="deleteThuoc" parameterType="int">
+        DELETE from THUOC WHERE ID = #{id};
+    </delete>
     <resultMap id = "result" type = "Drug">
        <result property = "id" column = "ID"/>
        <result property = "ten" column = "TEN"/>

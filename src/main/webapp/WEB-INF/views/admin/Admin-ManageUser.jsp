@@ -256,6 +256,9 @@
                             <div class="col-md-12">
                                 <!-- DATA TABLE -->
                                 <h3 class="title-5 m-b-35">Dữ liệu người dùng</h3>
+                                <h4 style="color: red;">${msgdeluser}</h4>
+                                <p style="color: green;">${msgadd}</p>
+                                <p style="color: yellow;">${msgaddfail}</p>
                                 <div class="table-data__tool">
                                     <div class="table-data__tool-left">
                                         <div class="rs-select2--light rs-select2--md">
@@ -299,6 +302,9 @@
                                             </tr>
                                         </thead>
                                         <c:forEach items="${userList}" var="u">
+                                        	<c:url var="deleteLink" value="/deleteUser">
+						                        <c:param name="userId" value="${u.id}" />
+						                    </c:url>
                                         <tbody>
                                             <tr class="tr-shadow">
                                                 <td>Lori Lynch</td>
@@ -316,7 +322,7 @@
 	                                                            <a href="#"><i class="zmdi zmdi-edit" ></i></a>
 	                                                        </button>
 	                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-	                                                            <a href="#" onclick="if (!(confirm('Bạn có muốn xóa sản phẩm này?'))) return false"><i class="zmdi zmdi-delete"></i></a>
+	                                                            <a href="${deleteLink}" onclick="if (!(confirm('Bạn có muốn xóa người dùng này?'))) return false"><i class="zmdi zmdi-delete"></i></a>
 	                                                        </button>
 	                                                    </div>
                                                 </td>

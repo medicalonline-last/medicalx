@@ -11,6 +11,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -42,15 +43,15 @@ public class UserController {
 		
 		if (password.equals(repeatpassword)==true&&checkuser==0) {				
 	        userService.insertUser(user);
-	        map.put("msg", "Đăng kí thành công");
+	        map.put("msgadd", "Add new user success");
 	        return "redirect:Admin-ManageUser";
 		}
 		else if  (checkuser==1) {
-			map.put("msg", "Tài khoản đã tồn lại");
+			map.put("msgaddfail", "Tài khoản đã tồn lại");
 			return "redirect:Admin-ManageUser";
 		}
 			else {
-				map.put("msg", "Mật khẩu nhập lại không đúng");
+				map.put("msgaddfail", "Mật khẩu nhập lại không đúng");
 				return "redirect:Admin-ManageUser";
 			}
 	 		  
@@ -63,6 +64,14 @@ public class UserController {
 	    	model.addAttribute("userList",list);
 			return "/admin/Admin-ManageUser";
 	 }
+	 
+	 @RequestMapping(value = "deleteUser")
+	 	public String deleteUserById(ModelMap model, @RequestParam("userId") int userId) {
+	 		UserService userService = (UserService) context.getBean("userService");
+	 		userService.deleteUserById(userId);
+	 		model.put("msgdeluser", "Delete sussces!!!");
+	 		return "redirect:Admin-ManageUser.html";
+	 	}
 	
 	@RequestMapping(value="/register.do", method=RequestMethod.POST)
 	public String addUser(User user, @RequestParam String username, @RequestParam String password,@RequestParam String repeatpassword,ModelMap map) throws IOException {
@@ -115,5 +124,11 @@ public class UserController {
 		 		  
 	
 	}
+	 @RequestMapping(value="/logout",method = RequestMethod.GET)
+     public String logout(HttpServletRequest request ){
+         HttpSession httpSession = request.getSession();       
+         httpSession.invalidate();        
+         return "login";
+     }
 
 }

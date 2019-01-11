@@ -468,9 +468,10 @@
 								<h3>Nếu bạn đăng xuất khỏi hệ thống, mọi quyền lợi tham gia
 									vào hệ thống dành cho thành viên sẽ không được áp dụng cho đối
 									tượng bên ngoài. Bạn muốn tiếp tục?</h3>
-								<input class="usercontent-tab-ibutton" type="submit"
-									value="Đăng xuất" style="float: right" />
-
+								<form action="logout">
+								<input class="usercontent-tab-ibutton" type="submit" 
+									value="Đăng xuất" style="float: right" onclick="if (!(confirm('Bạn có muốn đăng xuất không?'))) return false"/>
+								</form>
 							</div>
 
 						</div>

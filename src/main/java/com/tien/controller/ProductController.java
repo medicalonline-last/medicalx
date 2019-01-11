@@ -53,9 +53,10 @@ public class ProductController {
 		return MANAGEPRODUCT;
 	}*/
     
-  /*  @RequestMapping("/deleteProduct")
-	public String deleteThuoc(@RequestParam("thuocId") int thuocId) {
+    @RequestMapping("/deleteProduct")
+	public String deleteThuoc(ModelMap model, @RequestParam("thuocId") int thuocId) {
+    	DrugService drugService = (DrugService) context.getBean("drugService");
 		drugService.deleteThuoc(thuocId);
-		return MANAGEPRODUCT;
-	}*/
+		return "redirect:Admin-ManageProduct.html";
+	}
 }

@@ -8,5 +8,6 @@ public interface DatLichMapper {
 	public int insertDatLich(DatLich datLich);
 	public List<DatLich> getAllLich();
 	public String getNameBSFromIdLich();
+	public int deleteLich(int lichId);
 	
 }
