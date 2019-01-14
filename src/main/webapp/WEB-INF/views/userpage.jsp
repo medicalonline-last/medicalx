@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="s"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <!-- InstanceBegin template="/Templates/index's template.dwt" codeOutsideHTMLIsLocked="false" -->
@@ -212,11 +214,12 @@
 										</legend>
 										<table class="usercontent-tab-info-form" cellpadding="0"
 											cellspacing="0">
+											<c:forEach items = "${ }" var = "">
 											<tbody>
 												<tr>
 													<td align="right" width="150px"><span
 														class="usercontent-tab-span-title">Họ và tên</span></td>
-													<td class="usercontent-tab-itext">Họ và tên load từ db</td>
+													<td class="usercontent-tab-itext"><c:out value = "${ }"/></td>
 												</tr>
 												<tr>
 													<td align="right"><span
@@ -251,6 +254,7 @@
 													<td class="usercontent-tab-itext">load từ DB</td>
 												</tr>
 											</tbody>
+											</c:forEach>
 										</table>
 
 									</fieldset>
